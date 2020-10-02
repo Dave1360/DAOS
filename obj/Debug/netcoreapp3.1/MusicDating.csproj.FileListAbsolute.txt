@@ -2,7 +2,6 @@
 /Users/christiankirschberg/repos/school/MusicDating/bin/Debug/netcoreapp3.1/appsettings.json
 /Users/christiankirschberg/repos/school/MusicDating/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
 /Users/christiankirschberg/repos/school/MusicDating/bin/Debug/netcoreapp3.1/MusicDating.StaticWebAssets.xml
-/Users/christiankirschberg/repos/school/MusicDating/bin/Debug/netcoreapp3.1/app.db
 /Users/christiankirschberg/repos/school/MusicDating/bin/Debug/netcoreapp3.1/MusicDating.deps.json
 /Users/christiankirschberg/repos/school/MusicDating/bin/Debug/netcoreapp3.1/MusicDating.runtimeconfig.json
 /Users/christiankirschberg/repos/school/MusicDating/bin/Debug/netcoreapp3.1/MusicDating.runtimeconfig.dev.json
@@ -193,6 +192,13 @@
 /Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Agents/Details.cshtml.g.cs
 /Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Agents/Edit.cshtml.g.cs
 /Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Agents/Index.cshtml.g.cs
+/Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml.g.cs
+/Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/Account/Login.cshtml.g.cs
+/Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/Account/Logout.cshtml.g.cs
+/Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/Account/Register.cshtml.g.cs
+/Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/Account/_ViewImports.cshtml.g.cs
+/Users/christiankirschberg/repos/school/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/_ViewImports.cshtml.g.cs
+/Users/christiankirschberg/repos/school/MusicDating/bin/Debug/netcoreapp3.1/app.db
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/appsettings.json
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
@@ -360,6 +366,12 @@
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/MusicDating.TagHelpers.input.cache
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/MusicDating.TagHelpers.output.cache
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/MusicDating.RazorCoreGenerate.cache
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/Account/Login.cshtml.g.cs
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/Account/Logout.cshtml.g.cs
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/Account/Register.cshtml.g.cs
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/Account/_ViewImports.cshtml.g.cs
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml.g.cs
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/_ViewImports.cshtml.g.cs
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/_ViewStart.cshtml.g.cs
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Agents/Create.cshtml.g.cs
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Agents/Delete.cshtml.g.cs
