@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicDating.Data;
 
 namespace MusicDating.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201113125054_Data")]
+    partial class Data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,13 +95,13 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5ebc9c56-7dec-4089-96c5-b614676f19e8",
+                            ConcurrencyStamp = "b1a267d9-a91b-4a26-a15b-1040c37d8958",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmailConfirmed = false,
                             LastName = "Kappa",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3da83c5f-2f1b-407e-9094-f1a85bf95172",
+                            SecurityStamp = "559dea72-e907-4211-973c-016b59c2b55e",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -107,13 +109,13 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6c480962-395b-46f6-84ec-bcd2d1e65725",
+                            ConcurrencyStamp = "c8f1a3e2-63c0-4f5e-b750-d9b66de2f7fc",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmailConfirmed = false,
                             LastName = "Dummy",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "84e260e5-c4c9-4b66-a9ce-f49567169310",
+                            SecurityStamp = "741feae1-656a-4cad-bdad-8e45edf39f82",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });
@@ -402,13 +404,13 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             InstrumentId = 1,
-                            Level = 5
+                            Level = 0
                         },
                         new
                         {
                             Id = "2",
                             InstrumentId = 2,
-                            Level = 2
+                            Level = 0
                         });
                 });
 

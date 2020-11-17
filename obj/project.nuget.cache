@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QXbpZ+ZW8H7rQKsoVK9jZu2hWxpDdTNtzPZwi6QNb/h8r3gxmPFyhuyLOYfTZPImnc9PuiWNfMImd48oqYkQkA==",
+  "dgSpecHash": "8aaGh8F58PYChFHNoGbE09AZmlQ6WImONlApWsbIKRq9G4AAbzGAHQkjnMDlJBMqDE4h7Af48PwdXtPfmMkhNA==",
   "success": true,
   "projectFilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/MusicDating.csproj",
   "expectedPackageFiles": [
+    "/Users/davidfraenkel/.nuget/packages/microsoft.aspnetcore.authentication.facebook/3.1.9/microsoft.aspnetcore.authentication.facebook.3.1.9.nupkg.sha512",
     "/Users/davidfraenkel/.nuget/packages/microsoft.aspnetcore.cryptography.internal/3.1.8/microsoft.aspnetcore.cryptography.internal.3.1.8.nupkg.sha512",
     "/Users/davidfraenkel/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/3.1.8/microsoft.aspnetcore.cryptography.keyderivation.3.1.8.nupkg.sha512",
     "/Users/davidfraenkel/.nuget/packages/microsoft.aspnetcore.diagnostics.entityframeworkcore/3.1.6/microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.6.nupkg.sha512",
