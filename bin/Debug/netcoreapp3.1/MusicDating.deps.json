@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "MusicDating/1.0.0": {
         "dependencies": {
+          "BuildBundlerMinifier": "3.2.449",
           "Microsoft.AspNetCore.Authentication.Facebook": "3.1.9",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.6",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.8",
@@ -303,6 +304,7 @@
           "MusicDating.dll": {}
         }
       },
+      "BuildBundlerMinifier/3.2.449": {},
       "Microsoft.AspNetCore.Authentication.Facebook/3.1.9": {
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {
@@ -4113,6 +4115,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BuildBundlerMinifier/3.2.449": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uA9sYDy4VepL3xwzBTLcP2LyuVYMt0ZIT3gaSiXvGoX15Ob+rOP+hGydhevlSVd+rFo+Y+VQFEHDuWU8HBW+XA==",
+      "path": "buildbundlerminifier/3.2.449",
+      "hashPath": "buildbundlerminifier.3.2.449.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Facebook/3.1.9": {
       "type": "package",

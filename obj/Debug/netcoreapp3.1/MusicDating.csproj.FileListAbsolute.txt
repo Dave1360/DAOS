@@ -402,3 +402,4 @@
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/MusicDating.genruntimeconfig.cache
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Users/Index.cshtml.g.cs
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/bundleconfig.json
