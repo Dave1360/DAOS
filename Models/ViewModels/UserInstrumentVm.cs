@@ -11,7 +11,7 @@ namespace MusicDating.Models.ViewModels
         public SelectList Instruments { get; set; }
         public string InstrumentName { get; set; }
         public SelectList Genres { get; set; }
-        public string GenreName { get; set; }
+        public int GenreId { get; set; }
 
     }
 }

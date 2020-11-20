@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MusicDating.Data;
 using MusicDating.Models.Entities;
+using MusicDating.Models.Services;
 using MusicDating.Models.ViewModels;
 
 namespace MusicDating.Controllers
@@ -21,36 +22,11 @@ namespace MusicDating.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> Index(string instrumentName, string genreName)
+        public async Task<IActionResult> Index(string instrumentName, int genreId)
         {
             // Do some coding - filter users to only display those who play the instrument
             // Get list of instruments
-            var users = from u in _context.UserInstruments.Include(u => u.UserInstrumentGenres).Include(u => u.ApplicationUser).Include(u => u.Instrument)
-                        select u;
-
-            var genres = from g in _context.UserInstrumentGenres.Include(g => g.Genre)
-                         select g.Genre;
-
-            if (!string.IsNullOrEmpty(instrumentName))
-            {
-                users = users.Where(u => u.Instrument.Name == instrumentName);
-            }
-
-            if (!string.IsNullOrEmpty(genreName))
-            {
-                // Filter some shit here
-            }
-
-            var userInstrumentVM = new UserInstrumentVm
-            {
-                UserInstruments = await users.Distinct().ToListAsync(),
-                Instruments = new SelectList(await _context.Instruments.ToListAsync(), "Name", "Name"),
-                Genres = new SelectList(await _context.Genres.ToListAsync(), "GenreName", "GenreName"),
-                InstrumentName = instrumentName,
-                GenreName = genreName
-                // UserInstrumentGenre = await userInstruments.ToListAsync(),
-                // Genres = new SelectList(await genreQuery.Distinct().ToListAsync())
-            };
+            UserInstrumentVm userInstrumentVM = await UserServices.SearchForUsers(_context, instrumentName, genreId);
 
             return View(userInstrumentVM);
         }
