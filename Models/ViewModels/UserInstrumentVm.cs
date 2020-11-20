@@ -7,10 +7,11 @@ namespace MusicDating.Models.ViewModels
 {
     public class UserInstrumentVm
     {
-        public List<UserInstrument> UserInstrument { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
+        public IEnumerable<UserInstrument> UserInstruments { get; set; }
         public SelectList Instruments { get; set; }
         public string InstrumentName { get; set; }
+        public SelectList Genres { get; set; }
+        public string GenreName { get; set; }
 
     }
 }

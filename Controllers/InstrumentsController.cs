@@ -54,6 +54,7 @@ namespace MusicDating.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("InstrumentId,Name")] Instrument instrument)
         {
             if (ModelState.IsValid)

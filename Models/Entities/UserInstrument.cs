@@ -20,5 +20,7 @@ namespace MusicDating.Models.Entities
 
         public int Level { get; set; }
 
+        public ICollection<UserInstrumentGenre> UserInstrumentGenres { get; set; }
+
     }
 }

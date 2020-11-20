@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicDating.Data;
 
 namespace MusicDating.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201120115250_NewInstrument")]
+    partial class NewInstrument
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,13 +95,13 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2d06960a-c286-4a92-9f40-a67a0e1eb3b3",
+                            ConcurrencyStamp = "4db27ccd-57de-4191-aedd-d06cbb0d8f76",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmailConfirmed = false,
                             LastName = "Kappa",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4c6c67ca-8a86-4582-8f67-4c3967adc592",
+                            SecurityStamp = "368d0abe-8931-4d37-a297-310473990be4",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -107,13 +109,13 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "45e8b9e5-9969-4567-9925-0448ce80c4c0",
+                            ConcurrencyStamp = "a5552d79-f363-4327-925b-eeb90b1f5aad",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmailConfirmed = false,
                             LastName = "Dummy",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "10eb7456-0a7a-4243-a15e-1bc7c512e5e0",
+                            SecurityStamp = "739e31e6-215d-40e1-9cbf-a2ba3909fa77",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });
@@ -417,50 +419,6 @@ namespace MusicDating.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MusicDating.Models.Entities.UserInstrumentGenre", b =>
-                {
-                    b.Property<int>("UserInstrumentGenreId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("GenreId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("InstrumentId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("UserInstrumentGenreId");
-
-                    b.HasIndex("GenreId");
-
-                    b.HasIndex("Id", "InstrumentId");
-
-                    b.ToTable("UserInstrumentGenres");
-
-                    b.HasData(
-                        new
-                        {
-                            UserInstrumentGenreId = 1,
-                            GenreId = 3,
-                            InstrumentId = 2
-                        },
-                        new
-                        {
-                            UserInstrumentGenreId = 2,
-                            GenreId = 1,
-                            InstrumentId = 1
-                        },
-                        new
-                        {
-                            UserInstrumentGenreId = 3,
-                            GenreId = 2,
-                            InstrumentId = 3
-                        });
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -549,19 +507,6 @@ namespace MusicDating.Migrations
                         .HasForeignKey("InstrumentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("MusicDating.Models.Entities.UserInstrumentGenre", b =>
-                {
-                    b.HasOne("MusicDating.Models.Entities.Genre", "Genre")
-                        .WithMany("UserInstrumentGenres")
-                        .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MusicDating.Models.Entities.UserInstrument", "UserInstrument")
-                        .WithMany("UserInstrumentGenres")
-                        .HasForeignKey("Id", "InstrumentId");
                 });
 #pragma warning restore 612, 618
         }

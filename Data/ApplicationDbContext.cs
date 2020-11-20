@@ -39,6 +39,17 @@ namespace MusicDating.Data
                 .WithMany(c => c.UserInstruments)
                 .HasForeignKey(bc => bc.InstrumentId);
 
+            modelBuilder.Entity<UserInstrumentGenre>()
+       .HasKey(bc => bc.UserInstrumentGenreId);
+            modelBuilder.Entity<UserInstrumentGenre>()
+                .HasOne(bc => bc.Genre)
+                .WithMany(b => b.UserInstrumentGenres)
+                .HasForeignKey(bc => bc.GenreId);
+            modelBuilder.Entity<UserInstrumentGenre>()
+                .HasOne(bc => bc.UserInstrument)
+                .WithMany(c => c.UserInstrumentGenres)
+                .HasForeignKey(bc => new { bc.Id, bc.InstrumentId });
+
             modelBuilder.Entity<ApplicationUser>().HasData(
                 new ApplicationUser { Id = "1", UserName = "Kappa", LastName = "Kappa", DateCreated = new System.DateTime(2020, 12, 24) },
                 new ApplicationUser { Id = "2", UserName = "Dummy", LastName = "Dummy", DateCreated = new System.DateTime(2020, 12, 24) }
@@ -46,7 +57,8 @@ namespace MusicDating.Data
             // Add data - Instruments
             modelBuilder.Entity<Instrument>().HasData(
                 new Instrument { InstrumentId = 1, Name = "Drums", },
-                new Instrument { InstrumentId = 2, Name = "Guitar", }
+                new Instrument { InstrumentId = 2, Name = "Guitar", },
+                new Instrument { InstrumentId = 3, Name = "Bass", }
             );
 
             // Add data - userinstruments
@@ -73,6 +85,11 @@ namespace MusicDating.Data
                 new GenreEnsemble { GenreId = 1, EnsembleId = 1 },
                 new GenreEnsemble { GenreId = 2, EnsembleId = 1 }
             );
+            modelBuilder.Entity<UserInstrumentGenre>().HasData(
+               new UserInstrumentGenre { UserInstrumentGenreId = 1, InstrumentId = 2, GenreId = 3 },
+               new UserInstrumentGenre { UserInstrumentGenreId = 2, InstrumentId = 1, GenreId = 1 },
+               new UserInstrumentGenre { UserInstrumentGenreId = 3, InstrumentId = 3, GenreId = 2 }
+           );
         }
 
         // This means that EF (Entity Framework) will create a table called Instrument based
@@ -89,5 +106,6 @@ namespace MusicDating.Data
         public DbSet<Ensemble> Ensembles { get; set; }
         public DbSet<GenreEnsemble> GenreEnsembles { get; set; }
         public DbSet<UserInstrument> UserInstruments { get; set; }
+        public DbSet<UserInstrumentGenre> UserInstrumentGenres { get; set; }
     }
 }
