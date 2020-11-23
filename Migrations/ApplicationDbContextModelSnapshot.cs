@@ -93,13 +93,13 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2d06960a-c286-4a92-9f40-a67a0e1eb3b3",
+                            ConcurrencyStamp = "934847be-2165-49d8-a34e-d0f6592e4921",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmailConfirmed = false,
                             LastName = "Kappa",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4c6c67ca-8a86-4582-8f67-4c3967adc592",
+                            SecurityStamp = "25a5de6c-637c-4193-9669-b5ffecf3127f",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -107,13 +107,13 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "45e8b9e5-9969-4567-9925-0448ce80c4c0",
+                            ConcurrencyStamp = "127f3a4e-6513-4089-a19e-dfe7eaa0164d",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmailConfirmed = false,
                             LastName = "Dummy",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "10eb7456-0a7a-4243-a15e-1bc7c512e5e0",
+                            SecurityStamp = "eee37241-7c52-47c2-bc95-7f05fe1c6cef",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });
@@ -445,19 +445,22 @@ namespace MusicDating.Migrations
                         {
                             UserInstrumentGenreId = 1,
                             GenreId = 3,
+                            Id = "2",
                             InstrumentId = 2
                         },
                         new
                         {
                             UserInstrumentGenreId = 2,
                             GenreId = 1,
+                            Id = "1",
                             InstrumentId = 1
                         },
                         new
                         {
                             UserInstrumentGenreId = 3,
                             GenreId = 2,
-                            InstrumentId = 3
+                            Id = "2",
+                            InstrumentId = 2
                         });
                 });
 

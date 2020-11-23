@@ -22,11 +22,11 @@ namespace MusicDating.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> Index(string instrumentName, int genreId)
+        public async Task<IActionResult> Index(int instrumentId, int genreId)
         {
             // Do some coding - filter users to only display those who play the instrument
             // Get list of instruments
-            UserInstrumentVm userInstrumentVM = await UserServices.SearchForUsers(_context, instrumentName, genreId);
+            UserInstrumentVm userInstrumentVM = await UserServices.SearchForUsers(_context, instrumentId, genreId);
 
             return View(userInstrumentVM);
         }

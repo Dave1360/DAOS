@@ -86,9 +86,9 @@ namespace MusicDating.Data
                 new GenreEnsemble { GenreId = 2, EnsembleId = 1 }
             );
             modelBuilder.Entity<UserInstrumentGenre>().HasData(
-               new UserInstrumentGenre { UserInstrumentGenreId = 1, InstrumentId = 2, GenreId = 3 },
-               new UserInstrumentGenre { UserInstrumentGenreId = 2, InstrumentId = 1, GenreId = 1 },
-               new UserInstrumentGenre { UserInstrumentGenreId = 3, InstrumentId = 3, GenreId = 2 }
+               new UserInstrumentGenre { UserInstrumentGenreId = 1, InstrumentId = 2, GenreId = 3, Id = "2" },
+               new UserInstrumentGenre { UserInstrumentGenreId = 2, InstrumentId = 1, GenreId = 1, Id = "1" },
+               new UserInstrumentGenre { UserInstrumentGenreId = 3, InstrumentId = 2, GenreId = 2, Id = "2" }
            );
         }
 
@@ -100,7 +100,7 @@ namespace MusicDating.Data
         // on our Instrument class.
         public DbSet<Agent> Agent { get; set; }
 
-        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Ensemble> Ensembles { get; set; }
