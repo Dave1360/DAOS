@@ -39,10 +39,6 @@ namespace MusicDating.Models.Services
                 select u;
             }
 
-            // if (!string.IsNullOrEmpty(genreId))
-            // {
-            // Filter some shit here
-            // }
 
             var userInstrumentVM = new UserInstrumentVm
             {

@@ -607,3 +607,6 @@
 /Users/miklas/dotnet/DAOS/obj/Debug/netcoreapp3.1/staticwebassets/MusicDating.StaticWebAssets.xml
 /Users/miklas/dotnet/DAOS/obj/Debug/netcoreapp3.1/MusicDating.genruntimeconfig.cache
 /Users/miklas/dotnet/DAOS/bin/Debug/netcoreapp3.1/app.db
+/Users/miklas/dotnet/DAOS/obj/Debug/netcoreapp3.1/Razor/Views/Svgs/notes.cshtml.g.cs
+/Users/miklas/dotnet/DAOS/obj/Debug/netcoreapp3.1/Razor/Views/Svgs/ensemble-icon.cshtml.g.cs
+/Users/miklas/dotnet/DAOS/obj/Debug/netcoreapp3.1/Razor/Views/Svgs/musician-icon.cshtml.g.cs

@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="center">
+    <partial name="~/Views/Svgs/notes.cshtml"/>
+    <h1 class="h1-text main-red my-4 montserrat bold">Stedet hvor musikere finder musikere og spiller musik sammen</h1>
+    <div class="d-flex justify-content-center">
+        <button class="btn rounded border-lightgrey shadow-sm m-2 oswald"><div><partial name="~/Views/Svgs/musician-icon.cshtml"/></div><span class="button-text main-blue">Find musiker</span></button>
+        <button class="btn rounded border-lightgrey shadow-sm m-2 oswald"><div><partial name="~/Views/Svgs/ensemble-icon.cshtml"/></div><span class="button-text main-blue">Find ensemble</span></button>
+    </div>
 </div>

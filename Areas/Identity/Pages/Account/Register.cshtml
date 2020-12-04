@@ -30,6 +30,10 @@
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <input asp-for="Input.ConfirmPassword" placeholder="Confirm Password" class="form-control" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="checkbox" asp-for="Input.acceptTerms" name="ToS">
                 <label for="ToS">Jeg accepterer betingelserne</label>
             </div>

@@ -4,22 +4,22 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 class="h1-text main-blue oswald">Opret agent</h1>
 
-<h4>Agent</h4>
+<p class="montserrat regular">Få besked på mail, når der kommer et nyt opslag der matcher din søgning</p>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Agent.Level" class="control-label"></label>
-                <input asp-for="Agent.Level" class="form-control" />
-                <span asp-validation-for="Agent.Level" class="text-danger"></span>
+                <label asp-for="Agent.Instrument" class="control-label"></label>
+                <select asp-for="Agent.InstrumentId" class ="form-control" asp-items="Model.Instruments"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Agent.InstrumentId" class="control-label"></label>
-                <select asp-for="Agent.InstrumentId" class ="form-control" asp-items="Model.Instruments"></select>
+                <label asp-for="Agent.Level" class="control-label"></label><span id="rangeInput">: 1</span>
+                <input type="range" min="1" max="10" step="1" value="1" asp-for="Agent.Level" class="form-control no-padding" onchange="updateVal(this.value)" />
+                <span asp-validation-for="Agent.Level" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
