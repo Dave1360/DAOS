@@ -1,0 +1,20 @@
+@using MusicDating.Models.Entities
+@model ApplicationUser
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="border-bottom">
+
+    @Model.UserName
+    <span>Member since @Model.DateCreated</span>
+    <a href="#">Contact</a>
+</div>
+
+<div>
+    <h2>Profile description</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis necessitatibus fuga possimus iusto corporis
+        odit omnis consectetur consequuntur. Inventore nemo perspiciatis debitis alias ab quos animi saepe quasi
+        reprehenderit minima!</p>
+</div>

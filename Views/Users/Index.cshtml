@@ -23,37 +23,37 @@
         <input type="submit" value="Filter" class="btn btn-primary" />
     </div>
 </form>
-<h1>Index</h1>
-
-<table class="table">
-    @* <thead>
-        <tr>
-        <th>
-        @Html.DisplayNameFor(model => model.ApplicationUser.Id)
-        </th>
-        <th>
-        @Html.DisplayNameFor(model => model.ApplicationUser.UserName)
-        </th>
-        </tr>
-        </thead> *@
-    <tbody>
+<div class="container">
+    <div class="row">
         @foreach (var item in Model.ApplicationUsers)
         {
-            <tr>
-                <td>
-                    @item.UserName
-                </td>
+           <div class="card col col-12 col-md-6">
+               <div class="card-body">
+                   <div class="d-flex justify-content-between">
+                       <h5 class="card-title">
+                            @item.UserName
+                       </h5>
+                       <a asp-action="Profile" asp-route-id="@item.Id" class="btn btn-secondary">Show profile</a>
+                   </div>
+                <div class="card-text">
                 @foreach (var userInstrument in item.UserInstruments){
-                    <td>
+                    <h5>
                         @userInstrument.Instrument.Name
-                    </td>
-                    @foreach (var genre in userInstrument.UserInstrumentGenres) {
-                        <td>
-                            @genre.Genre.GenreName
-                        </td>
-                    }    
+                    </h5>
+                    <div>
+                        <h6>Level <span class="badge badge-primary">@userInstrument.Level</span></h6>
+                    </div>
+                    <div>
+                        @foreach (var genre in userInstrument.UserInstrumentGenres) {
+                            <span class="badge badge-primary">
+                                    @genre.Genre.GenreName
+                            </span> 
+                        } 
+                    </div>
                 }
-            </tr>
+                    </div>
+               </div>
+           </div>
         }
-    </tbody>
-</table>
+    </div>
+</div>

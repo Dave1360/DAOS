@@ -30,5 +30,26 @@ namespace MusicDating.Controllers
 
             return View(userInstrumentVM);
         }
+
+        // GET: User/Details/5
+        public async Task<IActionResult> Profile(string? id)
+        {
+          if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _context.Users
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            Console.WriteLine(user);
+
+            return View(user);
+        }
+
     }
 }
