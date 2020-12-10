@@ -127,6 +127,18 @@ body {
   border-radius: 5pt!important;
 }
 
+.rounded-x2 {
+  border-radius: 10pt !important;
+}
+
 .no-padding {
   padding: 0;
+}
+
+.profile-background {
+  background-color: #F9F9F9;
+}
+
+.contact-button {
+  background-color: #353A5D;
 }

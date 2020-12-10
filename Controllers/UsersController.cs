@@ -31,25 +31,42 @@ namespace MusicDating.Controllers
             return View(userInstrumentVM);
         }
 
-        // GET: User/Details/5
-        public async Task<IActionResult> Profile(string? id)
+        // GET: User/Profile
+        public async Task<IActionResult> Profile(string id)
         {
-          if (id == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var user = from u in _context.ApplicationUsers
+            .Include(u => u.UserInstruments).ThenInclude(u => u.UserInstrumentGenres).ThenInclude(u => u.Genre).ThenInclude(u => u.GenreEnsembles)
+            .Include(u => u.UserInstruments).ThenInclude(u => u.Instrument)
+                       select u;
+
+            // var user = await _context.Users
+            //     .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            Console.WriteLine(user);
+            if (!String.IsNullOrEmpty(id))
+            {
+                user = from u in user
+                       where u.Id == id
+                       select u;
+            }
 
-            return View(user);
+            return View(await user.ToListAsync());
         }
+
+        public async Task<IActionResult> EditProfile(string id)
+        {
+
+            return View();
+        }
+
 
     }
 }
