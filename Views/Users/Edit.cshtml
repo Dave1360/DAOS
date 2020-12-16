@@ -1,4 +1,4 @@
-@model IEnumerable<ApplicationUser>
+@model ApplicationUser
 @{
     ViewData["Title"] = "Edit Profile";
 }
@@ -13,45 +13,28 @@
 <div class="row">
     <div class="col-12">
         <form asp-action="Edit">
-            @foreach (var user in Model)
-            {
             <h4>Name</h4>
             <div class="row">
                 <div class="form-group col-6">
-                    <input asp-for="@user.FirstName" placeholder="Firstname" class="form-control" />
-                    <span asp-validation-for="@user.FirstName" class="text-danger"></span>
+                    <input asp-for="FirstName" placeholder="Firstname" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="form-group col-6">
-                    <input asp-for="@user.LastName" placeholder="Lastname" class="form-control" />
-                    <span asp-validation-for="@user.LastName" class="text-danger"></span>
+                    <input asp-for="LastName" placeholder="Lastname" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
-            </div>
-            <h4>Profile Description</h4>
-            <div class="form-group">
-                <input asp-for="@user.Profile.Description" placeholder="Profile Description" class="form-control" />
-                <span asp-validation-for="@user.Profile.Description" class="text-danger"></span>
-            </div>
-            <h4>Location</h4>
-            <div class="form-group">
-                <input asp-for="@user.Profile.Address" placeholder="Address" class="form-control" />
-                <span asp-validation-for="@user.Profile.Address" class="text-danger"></span>
             </div>
             <h4>Contact information</h4>
             <p>Your email and mobile number are only visible for others if you have selected searching</p>
             <div class="form-group">
-                <input asp-for="@user.Email" placeholder="Email" class="form-control" />
-                <span asp-validation-for="@user.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="@user.Profile.PhoneNumber" placeholder="Mobile Number" class="form-control" />
-                <span asp-validation-for="@user.Profile.PhoneNumber" class="text-danger"></span>
+                <input asp-for="Email" placeholder="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <h4>Profile Status</h4>
-            <input type="hidden" asp-for="@user.Id" />
+            <input type="text" asp-for="Id" />
              <div class="form-group">
                 <input type="submit" value="Save" class="contact-button text-white btn btn-block rounded-x2 mb-3" />
             </div>
-            }
         </form>
     </div>
 </div>

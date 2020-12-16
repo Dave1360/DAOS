@@ -73,55 +73,52 @@ namespace MusicDating.Controllers
         public async Task<IActionResult> Edit(string id)
         {
 
-            var user = from u in _context.ApplicationUsers
-                        .Include(u => u.Profile)
-                       select u;
 
-            if (!String.IsNullOrEmpty(id))
-            {
-                user = from u in user
-                       where u.Id == id
-                       select u;
-            }
+            var user = await _context.ApplicationUsers.FindAsync(id);
 
             if (user == null)
             {
                 return NotFound();
             }
-
-            return View(await user.ToListAsync());
+            return View(user);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("user.Id,user.FirstName,user.LastName,user.Email")] ApplicationUser applicationUser, [Bind("user.Profile.Description,user.Profile.Address,user.Profile.PhoneNumber")] Profile profile)
+        public async Task<IActionResult> Edit(string id, [Bind("FirstName,user.LastName,user.Email")] ApplicationUser applicationUser)
         {
-            if (id != applicationUser.Id)
-            {
-                return NotFound();
-            }
+            Console.WriteLine("id: " + id);
+            Console.WriteLine("UserId:" + applicationUser.FirstName);
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(applicationUser);
-                    _context.Update(profile);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ApplicationUserExists(id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
+            // if (applicationUser.Id == null)
+            // {
+            //     Console.WriteLine("Not found");
+            //     return NotFound();
+            // }
+
+            // if (ModelState.IsValid)
+            // {
+            //     try
+            //     {
+            //         _context.Update(applicationUser);
+            //         await _context.SaveChangesAsync();
+            //         _context.Update(profile);
+            //         await _context.SaveChangesAsync();
+            //     }
+            //     catch (DbUpdateConcurrencyException)
+            //     {
+            //         if (!ApplicationUserExists(applicationUser.Id))
+            //         {
+            //             Console.WriteLine("Does not exists");
+            //             return NotFound();
+            //         }
+            //         else
+            //         {
+            //             throw;
+            //         }
+            //     }
+            //     return RedirectToAction(nameof(Index));
+            // }
             return View();
         }
         private bool ApplicationUserExists(string id)
