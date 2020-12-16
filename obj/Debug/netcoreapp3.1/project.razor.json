@@ -14422,6 +14422,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Users/Edit.cshtml",
+      "TargetPath": "Views\\Users\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Agents/Create.cshtml",
       "TargetPath": "Views\\Agents\\Create.cshtml",
       "FileKind": "mvc"
@@ -14454,11 +14459,6 @@
     {
       "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Instruments/Edit.cshtml",
       "TargetPath": "Views\\Instruments\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Users/EditProfile.cshtml",
-      "TargetPath": "Views\\Users\\EditProfile.cshtml",
       "FileKind": "mvc"
     },
     {

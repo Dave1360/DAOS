@@ -9,8 +9,8 @@ using MusicDating.Data;
 namespace MusicDating.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201123100607_1")]
-    partial class _1
+    [Migration("20201216163100_InitialSagde")]
+    partial class InitialSagde
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -95,13 +95,15 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "934847be-2165-49d8-a34e-d0f6592e4921",
+                            ConcurrencyStamp = "3de6a845-94eb-4a8c-982b-ec373c5f3f75",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "kappa@kappa.dk",
                             EmailConfirmed = false,
                             LastName = "Kappa",
                             LockoutEnabled = false,
+                            PasswordHash = "Asd123!",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "25a5de6c-637c-4193-9669-b5ffecf3127f",
+                            SecurityStamp = "5b8be408-6fa3-486e-afe6-8598c02b943e",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -109,13 +111,15 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "127f3a4e-6513-4089-a19e-dfe7eaa0164d",
+                            ConcurrencyStamp = "35afe91e-5a0d-4121-b33b-fd36a37c92bd",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "therealdummy@dummy.dk",
                             EmailConfirmed = false,
                             LastName = "Dummy",
                             LockoutEnabled = false,
+                            PasswordHash = "Asd123!",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "eee37241-7c52-47c2-bc95-7f05fe1c6cef",
+                            SecurityStamp = "bd697362-4345-403b-84b7-8f13d35aed4e",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });
@@ -466,6 +470,46 @@ namespace MusicDating.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Profile", b =>
+                {
+                    b.Property<string>("ProfileId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PhoneNumber")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ProfileId");
+
+                    b.ToTable("profiles");
+
+                    b.HasData(
+                        new
+                        {
+                            ProfileId = "1",
+                            Address = "Vindebyvej",
+                            Birthday = new DateTime(2020, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "I have played 7 years blah blah",
+                            PhoneNumber = 12312312
+                        },
+                        new
+                        {
+                            ProfileId = "2",
+                            Address = "DummyStreet",
+                            Birthday = new DateTime(2020, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "I have played 10 years blah blah",
+                            PhoneNumber = 1231324322
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -567,6 +611,15 @@ namespace MusicDating.Migrations
                     b.HasOne("MusicDating.Models.Entities.UserInstrument", "UserInstrument")
                         .WithMany("UserInstrumentGenres")
                         .HasForeignKey("Id", "InstrumentId");
+                });
+
+            modelBuilder.Entity("Profile", b =>
+                {
+                    b.HasOne("ApplicationUser", "ApplicationUser")
+                        .WithOne("Profile")
+                        .HasForeignKey("Profile", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

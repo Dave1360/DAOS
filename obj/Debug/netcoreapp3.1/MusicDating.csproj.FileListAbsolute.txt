@@ -202,7 +202,6 @@
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/appsettings.json
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
-/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/app.db
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/MusicDating.StaticWebAssets.xml
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/MusicDating.deps.json
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/MusicDating.runtimeconfig.json
@@ -614,4 +613,5 @@
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Svgs/musician-icon.cshtml.g.cs
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Svgs/notes.cshtml.g.cs
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Users/Profile.cshtml.g.cs
-/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Users/EditProfile.cshtml.g.cs
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/app.db
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Users/Edit.cshtml.g.cs

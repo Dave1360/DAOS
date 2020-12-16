@@ -9,6 +9,6 @@ public class ApplicationUser : IdentityUser
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public DateTime DateCreated { get; set; }
-
+    public Profile Profile { get; set; }
     public ICollection<UserInstrument> UserInstruments { get; set; }
 }

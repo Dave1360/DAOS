@@ -40,7 +40,7 @@ namespace MusicDating.Data
                 .HasForeignKey(bc => bc.InstrumentId);
 
             modelBuilder.Entity<UserInstrumentGenre>()
-       .HasKey(bc => bc.UserInstrumentGenreId);
+                .HasKey(bc => bc.UserInstrumentGenreId);
             modelBuilder.Entity<UserInstrumentGenre>()
                 .HasOne(bc => bc.Genre)
                 .WithMany(b => b.UserInstrumentGenres)
@@ -50,10 +50,22 @@ namespace MusicDating.Data
                 .WithMany(c => c.UserInstrumentGenres)
                 .HasForeignKey(bc => new { bc.Id, bc.InstrumentId });
 
+            modelBuilder.Entity<ApplicationUser>()
+                .HasOne(bc => bc.Profile)
+                .WithOne(c => c.ApplicationUser)
+                .HasForeignKey<Profile>(c => c.ProfileId);
+
             modelBuilder.Entity<ApplicationUser>().HasData(
-                new ApplicationUser { Id = "1", UserName = "Kappa", LastName = "Kappa", DateCreated = new System.DateTime(2020, 12, 24) },
-                new ApplicationUser { Id = "2", UserName = "Dummy", LastName = "Dummy", DateCreated = new System.DateTime(2020, 12, 24) }
+                new ApplicationUser { Id = "1", UserName = "Kappa", Email = "kappa@kappa.dk", PasswordHash = "Asd123!", LastName = "Kappa", DateCreated = new System.DateTime(2020, 12, 24) },
+                new ApplicationUser { Id = "2", UserName = "Dummy", Email = "therealdummy@dummy.dk", PasswordHash = "Asd123!", LastName = "Dummy", DateCreated = new System.DateTime(2020, 12, 24) }
             );
+
+            modelBuilder.Entity<Profile>().HasData(
+                new Profile { ProfileId = "1", Address = "Vindebyvej", PhoneNumber = 12312312, Birthday = new System.DateTime(2020, 1, 10), Description = "I have played 7 years blah blah" },
+                new Profile { ProfileId = "2", Address = "DummyStreet", PhoneNumber = 1231324322, Birthday = new System.DateTime(2020, 4, 15), Description = "I have played 10 years blah blah" },
+                new Profile { ProfileId = "730bf4e7-ee11-4e4f-af80-7c54a3541782", Address = "DumDumStreet", PhoneNumber = 999999, Birthday = new System.DateTime(2020, 4, 15) }
+            );
+
             // Add data - Instruments
             modelBuilder.Entity<Instrument>().HasData(
                 new Instrument { InstrumentId = 1, Name = "Drums", },
@@ -103,6 +115,7 @@ namespace MusicDating.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<Profile> profiles { get; set; }
         public DbSet<Ensemble> Ensembles { get; set; }
         public DbSet<GenreEnsemble> GenreEnsembles { get; set; }
         public DbSet<UserInstrument> UserInstruments { get; set; }

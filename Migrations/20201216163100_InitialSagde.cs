@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MusicDating.Migrations
 {
-    public partial class _1 : Migration
+    public partial class InitialSagde : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -197,6 +197,27 @@ namespace MusicDating.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "profiles",
+                columns: table => new
+                {
+                    ProfileId = table.Column<string>(nullable: false),
+                    Address = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<int>(nullable: false),
+                    Birthday = table.Column<DateTime>(nullable: false),
+                    Description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_profiles", x => x.ProfileId);
+                    table.ForeignKey(
+                        name: "FK_profiles_AspNetUsers_ProfileId",
+                        column: x => x.ProfileId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "GenreEnsembles",
                 columns: table => new
                 {
@@ -295,12 +316,12 @@ namespace MusicDating.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateCreated", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "934847be-2165-49d8-a34e-d0f6592e4921", new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, null, "Kappa", false, null, null, null, null, null, false, "25a5de6c-637c-4193-9669-b5ffecf3127f", false, "Kappa" });
+                values: new object[] { "1", 0, "3de6a845-94eb-4a8c-982b-ec373c5f3f75", new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "kappa@kappa.dk", false, null, "Kappa", false, null, null, null, "Asd123!", null, false, "5b8be408-6fa3-486e-afe6-8598c02b943e", false, "Kappa" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateCreated", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2", 0, "127f3a4e-6513-4089-a19e-dfe7eaa0164d", new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, null, "Dummy", false, null, null, null, null, null, false, "eee37241-7c52-47c2-bc95-7f05fe1c6cef", false, "Dummy" });
+                values: new object[] { "2", 0, "35afe91e-5a0d-4121-b33b-fd36a37c92bd", new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "therealdummy@dummy.dk", false, null, "Dummy", false, null, null, null, "Asd123!", null, false, "bd697362-4345-403b-84b7-8f13d35aed4e", false, "Dummy" });
 
             migrationBuilder.InsertData(
                 table: "Ensembles",
@@ -356,6 +377,16 @@ namespace MusicDating.Migrations
                 table: "UserInstruments",
                 columns: new[] { "Id", "InstrumentId", "Level" },
                 values: new object[] { "2", 2, 2 });
+
+            migrationBuilder.InsertData(
+                table: "profiles",
+                columns: new[] { "ProfileId", "Address", "Birthday", "Description", "PhoneNumber" },
+                values: new object[] { "1", "Vindebyvej", new DateTime(2020, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "I have played 7 years blah blah", 12312312 });
+
+            migrationBuilder.InsertData(
+                table: "profiles",
+                columns: new[] { "ProfileId", "Address", "Birthday", "Description", "PhoneNumber" },
+                values: new object[] { "2", "DummyStreet", new DateTime(2020, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "I have played 10 years blah blah", 1231324322 });
 
             migrationBuilder.InsertData(
                 table: "UserInstrumentGenres",
@@ -457,6 +488,9 @@ namespace MusicDating.Migrations
 
             migrationBuilder.DropTable(
                 name: "GenreEnsembles");
+
+            migrationBuilder.DropTable(
+                name: "profiles");
 
             migrationBuilder.DropTable(
                 name: "UserInstrumentGenres");
