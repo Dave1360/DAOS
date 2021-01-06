@@ -61,9 +61,8 @@ namespace MusicDating.Data
             );
 
             modelBuilder.Entity<Profile>().HasData(
-                new Profile { ProfileId = "1", Address = "Vindebyvej", PhoneNumber = 12312312, Birthday = new System.DateTime(2020, 1, 10), Description = "I have played 7 years blah blah" },
-                new Profile { ProfileId = "2", Address = "DummyStreet", PhoneNumber = 1231324322, Birthday = new System.DateTime(2020, 4, 15), Description = "I have played 10 years blah blah" },
-                new Profile { ProfileId = "730bf4e7-ee11-4e4f-af80-7c54a3541782", Address = "DumDumStreet", PhoneNumber = 999999, Birthday = new System.DateTime(2020, 4, 15) }
+                new Profile { ProfileId = "1", ZipCode = 2730, City = "Herlev", PhoneNumber = 12312312, Birthday = new System.DateTime(2020, 1, 10), Description = "I have played 7 years blah blah" },
+                new Profile { ProfileId = "2", ZipCode = 2620, City = "Albertslund", PhoneNumber = 1231324322, Birthday = new System.DateTime(2020, 4, 15), Description = "I have played 10 years blah blah" }
             );
 
             // Add data - Instruments

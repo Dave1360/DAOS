@@ -9,8 +9,8 @@ using MusicDating.Data;
 namespace MusicDating.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201216165302_Addedprofilefordumym2")]
-    partial class Addedprofilefordumym2
+    [Migration("20210106140609_Initalcr")]
+    partial class Initalcr
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -95,7 +95,7 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f224c54d-5f12-4039-9e9c-885ce77361a0",
+                            ConcurrencyStamp = "d4872b3e-1500-4b3d-8110-2c59a4091f29",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "kappa@kappa.dk",
                             EmailConfirmed = false,
@@ -103,7 +103,7 @@ namespace MusicDating.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "Asd123!",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f179b8f1-f3ff-406d-856e-e38b3cfbaf4d",
+                            SecurityStamp = "fc457925-053b-495c-8a2a-345acdf9fbc9",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -111,7 +111,7 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4f628ac8-9387-4826-a267-3f3984d3b235",
+                            ConcurrencyStamp = "946e0080-d0b6-4a1d-beb3-d2844511bc0e",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "therealdummy@dummy.dk",
                             EmailConfirmed = false,
@@ -119,7 +119,7 @@ namespace MusicDating.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "Asd123!",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cd185ff5-0c1a-483c-bbe2-c25a34d51c31",
+                            SecurityStamp = "087c9ebe-66ec-49f8-b80b-a4049bcb939d",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });
@@ -475,16 +475,19 @@ namespace MusicDating.Migrations
                     b.Property<string>("ProfileId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Address")
+                    b.Property<DateTime?>("Birthday")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Birthday")
+                    b.Property<string>("City")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PhoneNumber")
+                    b.Property<int?>("PhoneNumber")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ZipCode")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ProfileId");
@@ -495,25 +498,20 @@ namespace MusicDating.Migrations
                         new
                         {
                             ProfileId = "1",
-                            Address = "Vindebyvej",
                             Birthday = new DateTime(2020, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Herlev",
                             Description = "I have played 7 years blah blah",
-                            PhoneNumber = 12312312
+                            PhoneNumber = 12312312,
+                            ZipCode = 2730
                         },
                         new
                         {
                             ProfileId = "2",
-                            Address = "DummyStreet",
                             Birthday = new DateTime(2020, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Albertslund",
                             Description = "I have played 10 years blah blah",
-                            PhoneNumber = 1231324322
-                        },
-                        new
-                        {
-                            ProfileId = "730bf4e7-ee11-4e4f-af80-7c54a3541782",
-                            Address = "DumDumStreet",
-                            Birthday = new DateTime(2020, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PhoneNumber = 999999
+                            PhoneNumber = 1231324322,
+                            ZipCode = 2620
                         });
                 });
 

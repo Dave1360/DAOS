@@ -2,7 +2,7 @@
 
 namespace MusicDating.Migrations
 {
-    public partial class whathappend : Migration
+    public partial class Initalcr : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,14 +11,14 @@ namespace MusicDating.Migrations
                 keyColumn: "Id",
                 keyValue: "1",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "3eda1972-2244-403b-b2bc-e71027733be4", "6b9105e4-eb26-40d8-bb00-7d015bd08043" });
+                values: new object[] { "d4872b3e-1500-4b3d-8110-2c59a4091f29", "fc457925-053b-495c-8a2a-345acdf9fbc9" });
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: "2",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "29232cdb-17bf-4272-a19e-540438b50e1e", "ebdc1b39-37eb-4825-aa82-b838eb11caec" });
+                values: new object[] { "946e0080-d0b6-4a1d-beb3-d2844511bc0e", "087c9ebe-66ec-49f8-b80b-a4049bcb939d" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -28,14 +28,14 @@ namespace MusicDating.Migrations
                 keyColumn: "Id",
                 keyValue: "1",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "f224c54d-5f12-4039-9e9c-885ce77361a0", "f179b8f1-f3ff-406d-856e-e38b3cfbaf4d" });
+                values: new object[] { "d9684bab-9f27-412c-b54c-1def725c0a49", "07fe8aa9-87bb-4d14-8d86-920340332e75" });
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: "2",
                 columns: new[] { "ConcurrencyStamp", "SecurityStamp" },
-                values: new object[] { "4f628ac8-9387-4826-a267-3f3984d3b235", "cd185ff5-0c1a-483c-bbe2-c25a34d51c31" });
+                values: new object[] { "b8e1bb77-bbb0-4f02-b1ff-3f6c4fcb64d6", "2b699b3f-c11d-40db-a4cd-97457eeed84a" });
         }
     }
 }

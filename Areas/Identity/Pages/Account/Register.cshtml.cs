@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using MusicDating.Models.Entities;
 
 namespace MusicDating.Areas.Identity.Pages.Account
 {
@@ -86,6 +87,8 @@ namespace MusicDating.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { FirstName = Input.FirstName, LastName = Input.LastName, UserName = Input.Email, Email = Input.Email };
+                var profile = new Profile { ProfileId = user.Id, PhoneNumber = null, Description = null, ZipCode = 2730, City = null, Birthday = null };
+                user.Profile = profile;
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

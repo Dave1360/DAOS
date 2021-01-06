@@ -613,5 +613,5 @@
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Svgs/musician-icon.cshtml.g.cs
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Svgs/notes.cshtml.g.cs
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Users/Profile.cshtml.g.cs
-/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/app.db
 /Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Users/Edit.cshtml.g.cs
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/bin/Debug/netcoreapp3.1/app.db
