@@ -1,7 +1,7 @@
-@model IEnumerable<ApplicationUser>
+@model IEnumerable<MusicDating.Models.Entities.ApplicationUser>
 @using Microsoft.AspNetCore.Identity
-@inject SignInManager<ApplicationUser> SignInManager
-@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<MusicDating.Models.Entities.ApplicationUser> SignInManager
+@inject UserManager<MusicDating.Models.Entities.ApplicationUser> UserManager
 
 @{
     ViewData["Title"] = "Profile";
@@ -37,7 +37,20 @@
 
         </div>
         <div class="border-top bg-white w-100 mb-3 border-bottom">
-            <p class="fw-bold main-blue mt-3">@user.UserName's Instruments </p>
+            @if (SignInManager.IsSignedIn(User) && @UserManager.GetUserId(User) == @user.Id)
+            {
+                 <div class="inline">
+                     <p class="fw-bold main-blue mt-3">Mine instrumenter </p>
+                     <button class="btn rounded border-lightgrey shadow-sm m-2 oswald">Tilføj</button>
+                </div>
+            }
+            else
+            {
+                <div class="inline">
+                    <p class="fw-bold main-blue mt-3">@user.FirstName's instrumenter</p>
+                </div>
+            }
+            
 
             @foreach (var instrument in user.UserInstruments)
             {

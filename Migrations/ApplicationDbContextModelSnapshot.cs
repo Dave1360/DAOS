@@ -93,15 +93,15 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d4872b3e-1500-4b3d-8110-2c59a4091f29",
+                            ConcurrencyStamp = "3b37ff41-12d9-48c0-91a4-fd901e8088a4",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "kappa@kappa.dk",
                             EmailConfirmed = false,
                             LastName = "Kappa",
                             LockoutEnabled = false,
-                            PasswordHash = "Asd123!",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fc457925-053b-495c-8a2a-345acdf9fbc9",
+                            SecurityStamp = "e48ad4d1-5c2f-49f9-8906-693017cc8fb3",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -109,15 +109,15 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "946e0080-d0b6-4a1d-beb3-d2844511bc0e",
+                            ConcurrencyStamp = "370b8910-fdf7-4849-9e68-782be02ddf65",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "therealdummy@dummy.dk",
                             EmailConfirmed = false,
                             LastName = "Dummy",
                             LockoutEnabled = false,
-                            PasswordHash = "Asd123!",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "087c9ebe-66ec-49f8-b80b-a4049bcb939d",
+                            SecurityStamp = "87513a5b-9ffa-4023-ba9e-e35e6ff59429",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });
@@ -482,9 +482,6 @@ namespace MusicDating.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("PhoneNumber")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int?>("ZipCode")
                         .HasColumnType("INTEGER");
 
@@ -499,7 +496,6 @@ namespace MusicDating.Migrations
                             Birthday = new DateTime(2020, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Herlev",
                             Description = "I have played 7 years blah blah",
-                            PhoneNumber = 12312312,
                             ZipCode = 2730
                         },
                         new
@@ -508,7 +504,6 @@ namespace MusicDating.Migrations
                             Birthday = new DateTime(2020, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Albertslund",
                             Description = "I have played 10 years blah blah",
-                            PhoneNumber = 1231324322,
                             ZipCode = 2620
                         });
                 });

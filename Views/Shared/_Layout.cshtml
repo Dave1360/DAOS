@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<MusicDating.Models.Entities.ApplicationUser> SignInManager
+@inject UserManager<MusicDating.Models.Entities.ApplicationUser> UserManager
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,15 +25,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <p>Skab af DAOS - Dansk Amatørorkester Samvirke</p>
+                
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
+                    @if (SignInManager.IsSignedIn(User)) {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-route-id="@UserManager.GetUserId(User)" asp-action="Profile">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Agents" asp-action="Index">Agent</a>
@@ -38,6 +41,8 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Search for musician</a>
                         </li>
+                    }
+                        <partial name="_LoginPartial" />
                     </ul>
                 </div>
             </div>

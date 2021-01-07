@@ -5,7 +5,7 @@ namespace MusicDating.Models.Entities {
         public int AgentId { get; set; }
         
         
-        [RegularExpression(@"^\d{1,5}$", ErrorMessage="Level must be between 1-5")]
+        [RegularExpression(@"^([1-9]|10)$", ErrorMessage="Level must be between 1 and 10")]
         [Required]
         public int Level { get; set; }
 

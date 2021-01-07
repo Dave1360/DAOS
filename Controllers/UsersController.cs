@@ -65,47 +65,33 @@ namespace MusicDating.Controllers
                        select u;
             }
 
-
             return View(await user.ToListAsync());
         }
 
         // GET: Profile/Edit/
         public async Task<IActionResult> Edit(string id)
         {
-
-
+            
             // var user = await _context.ApplicationUsers.FindAsync(id);
 
-            var user = from u in _context.ApplicationUsers
-            .Include(u => u.Profile)
-                       select u;
-
-            if (!String.IsNullOrEmpty(id))
-            {
-                user = from u in user
-                       where u.Id == id
-                       select u;
-            }
+            var user = await (from u in _context.ApplicationUsers
+            .Include(u => u.Profile) 
+            where u.Id == id
+                    select u).FirstAsync();
 
             if (user == null)
             {
                 return NotFound();
             }
 
-            Console.WriteLine(user);
-
-            return View(await user.ToListAsync());
+            return View(user);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,@user.FirstName,LastName,Email")] ApplicationUser applicationUser)
-        {
-
-            Console.WriteLine("id: " + id);
-            Console.WriteLine("id: " + applicationUser.Email);
-
-
+        public async Task<IActionResult> Edit(string id, [Bind("Id,FirstName,LastName,PhoneNumber,Email")] ApplicationUser applicationUser)
+        {         
+            Console.WriteLine(applicationUser);
             if (applicationUser.Id == null)
             {
                 Console.WriteLine("Not found");
@@ -116,6 +102,7 @@ namespace MusicDating.Controllers
             {
                 try
                 {
+                    
                     _context.Update(applicationUser);
                     await _context.SaveChangesAsync();
                 }
@@ -123,7 +110,7 @@ namespace MusicDating.Controllers
                 {
                     if (!ApplicationUserExists(applicationUser.Id))
                     {
-                        Console.WriteLine("Does not exists");
+                        Console.WriteLine("Does not exist");
                         return NotFound();
                     }
                     else

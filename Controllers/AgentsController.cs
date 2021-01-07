@@ -99,6 +99,7 @@ namespace MusicDating.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("AgentId,Level,InstrumentId")] Agent agent)
         {
+            Console.WriteLine("Level:" + agent.Level);
             if (id != agent.AgentId)
             {
                 return NotFound();
@@ -108,6 +109,7 @@ namespace MusicDating.Controllers
             {
                 try
                 {
+                    Console.WriteLine(agent);
                     _context.Update(agent);
                     await _context.SaveChangesAsync();
                 }

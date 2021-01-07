@@ -56,13 +56,13 @@ namespace MusicDating.Data
                 .HasForeignKey<Profile>(c => c.ProfileId);
 
             modelBuilder.Entity<ApplicationUser>().HasData(
-                new ApplicationUser { Id = "1", UserName = "Kappa", Email = "kappa@kappa.dk", PasswordHash = "Asd123!", LastName = "Kappa", DateCreated = new System.DateTime(2020, 12, 24) },
-                new ApplicationUser { Id = "2", UserName = "Dummy", Email = "therealdummy@dummy.dk", PasswordHash = "Asd123!", LastName = "Dummy", DateCreated = new System.DateTime(2020, 12, 24) }
+                new ApplicationUser { Id = "1", UserName = "Kappa", Email = "kappa@kappa.dk", PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", LastName = "Kappa", DateCreated = new System.DateTime(2020, 12, 24) },
+                new ApplicationUser { Id = "2", UserName = "Dummy", Email = "therealdummy@dummy.dk", PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", LastName = "Dummy", DateCreated = new System.DateTime(2020, 12, 24) }
             );
 
             modelBuilder.Entity<Profile>().HasData(
-                new Profile { ProfileId = "1", ZipCode = 2730, City = "Herlev", PhoneNumber = 12312312, Birthday = new System.DateTime(2020, 1, 10), Description = "I have played 7 years blah blah" },
-                new Profile { ProfileId = "2", ZipCode = 2620, City = "Albertslund", PhoneNumber = 1231324322, Birthday = new System.DateTime(2020, 4, 15), Description = "I have played 10 years blah blah" }
+                new Profile { ProfileId = "1", ZipCode = 2730, City = "Herlev", Birthday = new System.DateTime(2020, 1, 10), Description = "I have played 7 years blah blah" },
+                new Profile { ProfileId = "2", ZipCode = 2620, City = "Albertslund", Birthday = new System.DateTime(2020, 4, 15), Description = "I have played 10 years blah blah" }
             );
 
             // Add data - Instruments
@@ -114,7 +114,7 @@ namespace MusicDating.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public DbSet<Genre> Genres { get; set; }
-        public DbSet<Profile> profiles { get; set; }
+        public DbSet<Profile> Profiles { get; set; }
         public DbSet<Ensemble> Ensembles { get; set; }
         public DbSet<GenreEnsemble> GenreEnsembles { get; set; }
         public DbSet<UserInstrument> UserInstruments { get; set; }

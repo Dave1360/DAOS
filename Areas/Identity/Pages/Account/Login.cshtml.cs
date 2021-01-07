@@ -17,13 +17,13 @@ namespace MusicDating.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<MusicDating.Models.Entities.ApplicationUser> _userManager;
+        private readonly SignInManager<MusicDating.Models.Entities.ApplicationUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, 
+        public LoginModel(SignInManager<MusicDating.Models.Entities.ApplicationUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<ApplicationUser> userManager)
+            UserManager<MusicDating.Models.Entities.ApplicationUser> userManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
