@@ -39,9 +39,10 @@
         <div class="border-top bg-white w-100 mb-3 border-bottom">
             @if (SignInManager.IsSignedIn(User) && @UserManager.GetUserId(User) == @user.Id)
             {
-                 <div class="inline">
-                     <p class="fw-bold main-blue mt-3">Mine instrumenter </p>
-                     <button class="btn rounded border-lightgrey shadow-sm m-2 oswald">Tilføj</button>
+                <div class="inline">
+                    <p class="fw-bold main-blue mt-3">Mine instrumenter </p>
+                    <a asp-action="AddInstrument" asp-route-id="@user.Id"
+                        class="btn rounded border-lightgrey shadow-sm m-2 oswald">Tilføj</a>
                 </div>
             }
             else
@@ -50,7 +51,7 @@
                     <p class="fw-bold main-blue mt-3">@user.FirstName's instrumenter</p>
                 </div>
             }
-            
+
 
             @foreach (var instrument in user.UserInstruments)
             {

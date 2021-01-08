@@ -88,6 +88,7 @@ namespace MusicDating.Controllers
             {
                 return NotFound();
             }
+            Console.WriteLine(agent);
             ViewData["InstrumentId"] = new SelectList(_context.Instruments, "InstrumentId", "Name", agent.InstrumentId);
             return View(agent);
         }

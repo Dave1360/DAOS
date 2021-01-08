@@ -71,7 +71,7 @@ namespace MusicDating.Controllers
         // GET: Profile/Edit/
         public async Task<IActionResult> Edit(string id)
         {
-            
+
             // var user = await _context.ApplicationUsers.FindAsync(id);
 
             var user = await (from u in _context.ApplicationUsers
@@ -92,7 +92,7 @@ namespace MusicDating.Controllers
         public async Task<IActionResult> Edit(string id, [Bind("Id,FirstName,LastName,PhoneNumber,Email")] ApplicationUser applicationUser)
         {         
             Console.WriteLine(applicationUser);
-            if (applicationUser.Id == null)
+            if (applicationUser.Id != id)
             {
                 Console.WriteLine("Not found");
                 return NotFound();
@@ -125,6 +125,50 @@ namespace MusicDating.Controllers
         private bool ApplicationUserExists(string id)
         {
             return _context.ApplicationUsers.Any(e => e.Id == id);
+        }
+
+        public async Task<IActionResult> AddInstrument(string id, int instrumentId, int genreId) {
+
+            var user = await (from u in _context.ApplicationUsers
+            .Include(u => u.Profile) 
+            where u.Id == id
+                    select u).FirstAsync();
+
+             if (user == null)
+            {
+                return NotFound();
+            }
+
+            var AddInstrumentVm = new AddInstrumentVm
+            {
+                ApplicationUser = user,
+                Instruments = new SelectList(await _context.Instruments.ToListAsync(), "InstrumentId", "Name"),
+                Genres = new SelectList(await _context.Genres.ToListAsync(), "GenreId", "GenreName"),
+                InstrumentId = instrumentId,
+                GenreId = genreId
+            };
+
+            return View(AddInstrumentVm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddInstrument(string id, [Bind("Id,InstrumentId,GenreId,Level")] UserInstrument userInstrument) {
+             if (ModelState.IsValid)
+            {
+                try
+                {
+                    
+                    _context.Add(userInstrument);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
         }
     }
 }

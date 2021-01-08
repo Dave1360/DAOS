@@ -3,7 +3,6 @@
 
 // Write your JavaScript code.
 
-function updateVal(val){
-    console.log(val);
+function updateVal(val) {
     $("#rangeInput").html(': ' + val);
 }

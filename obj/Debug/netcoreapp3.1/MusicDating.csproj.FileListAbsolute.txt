@@ -617,3 +617,4 @@
 /Users/miklas/dotnet/DAOS/obj/Debug/netcoreapp3.1/Razor/Views/Users/Edit.cshtml.g.cs
 /Users/miklas/dotnet/DAOS/obj/Debug/netcoreapp3.1/Razor/Views/Users/Profile.cshtml.g.cs
 /Users/miklas/dotnet/DAOS/bin/Debug/netcoreapp3.1/app.db
+/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/Debug/netcoreapp3.1/Razor/Views/Users/AddInstrument.cshtml.g.cs
