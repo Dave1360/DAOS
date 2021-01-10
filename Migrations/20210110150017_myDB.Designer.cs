@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicDating.Data;
 
 namespace MusicDating.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210110150017_myDB")]
+    partial class myDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,7 +242,7 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5d1c11bf-cb24-4d24-82c9-71f931b5d292",
+                            ConcurrencyStamp = "85cf5e9e-c848-493d-8cc3-930833eac53a",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "kappa@kappa.dk",
                             EmailConfirmed = false,
@@ -248,7 +250,7 @@ namespace MusicDating.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f301557f-f4c8-4ee1-9a2f-037dfae7a769",
+                            SecurityStamp = "7f77ed0e-c187-4b4c-bf04-d784fa2520bc",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -256,7 +258,7 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "942f1f8a-5068-4154-b708-8282ed10d6b0",
+                            ConcurrencyStamp = "493ace32-bac5-445a-9d85-629a3227c26f",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "therealdummy@dummy.dk",
                             EmailConfirmed = false,
@@ -264,7 +266,7 @@ namespace MusicDating.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "89b55ca3-f424-42cf-9254-e50822a0d32c",
+                            SecurityStamp = "336e2222-ffb8-4b3b-9be9-0f315baffcc1",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });

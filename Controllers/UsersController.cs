@@ -127,7 +127,7 @@ namespace MusicDating.Controllers
             return _context.ApplicationUsers.Any(e => e.Id == id);
         }
 
-        public async Task<IActionResult> AddInstrument(string id, int instrumentId, int genreId) {
+        public async Task<IActionResult> AddUserInstrument(string id, int instrumentId, int genreId) {
 
             var user = await (from u in _context.ApplicationUsers
             .Include(u => u.Profile) 
@@ -139,7 +139,7 @@ namespace MusicDating.Controllers
                 return NotFound();
             }
 
-            var AddInstrumentVm = new AddInstrumentVm
+            var AddUserInstrumentVm = new AddUserInstrumentVm
             {
                 ApplicationUser = user,
                 Instruments = new SelectList(await _context.Instruments.ToListAsync(), "InstrumentId", "Name"),
@@ -148,18 +148,24 @@ namespace MusicDating.Controllers
                 GenreId = genreId
             };
 
-            return View(AddInstrumentVm);
+            return View(AddUserInstrumentVm);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddInstrument(string id, [Bind("Id,InstrumentId,GenreId,Level")] UserInstrument userInstrument) {
+        public async Task<IActionResult> AddUserInstrument(string id, int[] genreId, [Bind("Id,InstrumentId,Level")] UserInstrument userInstrument) {
              if (ModelState.IsValid)
             {
                 try
-                {
+                {   
                     
                     _context.Add(userInstrument);
+                   foreach (var item in genreId)
+                   {
+
+                        var userInstrumentGenre = new UserInstrumentGenre {Id = id, InstrumentId = userInstrument.InstrumentId, GenreId = item};
+                        _context.Add(userInstrumentGenre);
+                   } 
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -170,5 +176,59 @@ namespace MusicDating.Controllers
             }
             return View();
         }
+
+        public async Task<IActionResult> EditUserInstrument(string id, int instrumentId, int genreId) {
+
+            var user = await (from u in _context.UserInstruments 
+            .Include(u=> u.UserInstrumentGenres).ThenInclude(u => u.Genre)
+            where u.Id == id && u.InstrumentId == instrumentId
+                    select u).FirstAsync();
+
+            var EditUserInstrumentVm = new EditUserInstrumentVm
+            {
+                UserInstrument = user,
+                Genres = new SelectList(await _context.Genres.ToListAsync(), "GenreId", "GenreName"),
+                GenreId = genreId
+
+            };
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(EditUserInstrumentVm);  
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditUserInstrument(string id, int[] genreId, [Bind("Id,InstrumentId,Level")] UserInstrument userInstrument) {
+            if(ModelState.IsValid)
+            {
+                try
+                {   
+                    
+                    _context.Update(userInstrument);
+                    var userInstrumentsList = from u in _context.UserInstrumentGenres 
+                    where u.Id == id && u.InstrumentId == userInstrument.InstrumentId
+                            select u;
+                        
+                    foreach (var item in userInstrumentsList)
+                    {
+                        _context.UserInstrumentGenres.Remove(item);
+                    }
+                    foreach (var item in genreId) {
+                        var userInstrumentGenre = new UserInstrumentGenre {Id = id, InstrumentId = userInstrument.InstrumentId, GenreId = item};
+                        _context.Add(userInstrumentGenre);
+                    }
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+            }
+
+        }
     }
-}

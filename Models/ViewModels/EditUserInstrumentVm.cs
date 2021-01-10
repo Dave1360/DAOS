@@ -5,12 +5,9 @@ using MusicDating.Models.Entities;
 
 namespace MusicDating.Models.ViewModels
 {
-    public class AddInstrumentVm
+    public class EditUserInstrumentVm
     {
-        public ApplicationUser ApplicationUser { get; set; }
-        public int Level { get; set; }
-        public SelectList Instruments { get; set; }
-        public int InstrumentId { get; set; }
+        public UserInstrument UserInstrument { get; set; }
         public SelectList Genres { get; set; }
         public int GenreId { get; set; }
 

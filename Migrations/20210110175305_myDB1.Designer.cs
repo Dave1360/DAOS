@@ -9,121 +9,14 @@ using MusicDating.Data;
 namespace MusicDating.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210107125928_dbUpdate")]
-    partial class dbUpdate
+    [Migration("20210110175305_myDB1")]
+    partial class myDB1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.8");
-
-            modelBuilder.Entity("ApplicationUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(256);
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(256);
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(256);
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(256);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "1",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "3b37ff41-12d9-48c0-91a4-fd901e8088a4",
-                            DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "kappa@kappa.dk",
-                            EmailConfirmed = false,
-                            LastName = "Kappa",
-                            LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "e48ad4d1-5c2f-49f9-8906-693017cc8fb3",
-                            TwoFactorEnabled = false,
-                            UserName = "Kappa"
-                        },
-                        new
-                        {
-                            Id = "2",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "370b8910-fdf7-4849-9e68-782be02ddf65",
-                            DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "therealdummy@dummy.dk",
-                            EmailConfirmed = false,
-                            LastName = "Dummy",
-                            LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "87513a5b-9ffa-4023-ba9e-e35e6ff59429",
-                            TwoFactorEnabled = false,
-                            UserName = "Dummy"
-                        });
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -272,6 +165,113 @@ namespace MusicDating.Migrations
                     b.ToTable("Agent");
                 });
 
+            modelBuilder.Entity("MusicDating.Models.Entities.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(256);
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "5d1c11bf-cb24-4d24-82c9-71f931b5d292",
+                            DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "kappa@kappa.dk",
+                            EmailConfirmed = false,
+                            LastName = "Kappa",
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f301557f-f4c8-4ee1-9a2f-037dfae7a769",
+                            TwoFactorEnabled = false,
+                            UserName = "Kappa"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "942f1f8a-5068-4154-b708-8282ed10d6b0",
+                            DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "therealdummy@dummy.dk",
+                            EmailConfirmed = false,
+                            LastName = "Dummy",
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "89b55ca3-f424-42cf-9254-e50822a0d32c",
+                            TwoFactorEnabled = false,
+                            UserName = "Dummy"
+                        });
+                });
+
             modelBuilder.Entity("MusicDating.Models.Entities.Ensemble", b =>
                 {
                     b.Property<int>("EnsembleId")
@@ -391,6 +391,46 @@ namespace MusicDating.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MusicDating.Models.Entities.Profile", b =>
+                {
+                    b.Property<string>("ProfileId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("Birthday")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("City")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("ZipCode")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ProfileId");
+
+                    b.ToTable("Profiles");
+
+                    b.HasData(
+                        new
+                        {
+                            ProfileId = "1",
+                            Birthday = new DateTime(2020, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Herlev",
+                            Description = "I have played 7 years blah blah",
+                            ZipCode = 2730
+                        },
+                        new
+                        {
+                            ProfileId = "2",
+                            Birthday = new DateTime(2020, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            City = "Albertslund",
+                            Description = "I have played 10 years blah blah",
+                            ZipCode = 2620
+                        });
+                });
+
             modelBuilder.Entity("MusicDating.Models.Entities.UserInstrument", b =>
                 {
                     b.Property<string>("Id")
@@ -470,46 +510,6 @@ namespace MusicDating.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Profile", b =>
-                {
-                    b.Property<string>("ProfileId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("Birthday")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("City")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("ZipCode")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ProfileId");
-
-                    b.ToTable("profiles");
-
-                    b.HasData(
-                        new
-                        {
-                            ProfileId = "1",
-                            Birthday = new DateTime(2020, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Herlev",
-                            Description = "I have played 7 years blah blah",
-                            ZipCode = 2730
-                        },
-                        new
-                        {
-                            ProfileId = "2",
-                            Birthday = new DateTime(2020, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Albertslund",
-                            Description = "I have played 10 years blah blah",
-                            ZipCode = 2620
-                        });
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -521,7 +521,7 @@ namespace MusicDating.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ApplicationUser", null)
+                    b.HasOne("MusicDating.Models.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -530,7 +530,7 @@ namespace MusicDating.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ApplicationUser", null)
+                    b.HasOne("MusicDating.Models.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -545,7 +545,7 @@ namespace MusicDating.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ApplicationUser", null)
+                    b.HasOne("MusicDating.Models.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -554,7 +554,7 @@ namespace MusicDating.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ApplicationUser", null)
+                    b.HasOne("MusicDating.Models.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -585,9 +585,18 @@ namespace MusicDating.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MusicDating.Models.Entities.Profile", b =>
+                {
+                    b.HasOne("MusicDating.Models.Entities.ApplicationUser", "ApplicationUser")
+                        .WithOne("Profile")
+                        .HasForeignKey("MusicDating.Models.Entities.Profile", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("MusicDating.Models.Entities.UserInstrument", b =>
                 {
-                    b.HasOne("ApplicationUser", "ApplicationUser")
+                    b.HasOne("MusicDating.Models.Entities.ApplicationUser", "ApplicationUser")
                         .WithMany("UserInstruments")
                         .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -611,15 +620,6 @@ namespace MusicDating.Migrations
                     b.HasOne("MusicDating.Models.Entities.UserInstrument", "UserInstrument")
                         .WithMany("UserInstrumentGenres")
                         .HasForeignKey("Id", "InstrumentId");
-                });
-
-            modelBuilder.Entity("Profile", b =>
-                {
-                    b.HasOne("ApplicationUser", "ApplicationUser")
-                        .WithOne("Profile")
-                        .HasForeignKey("Profile", "ProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

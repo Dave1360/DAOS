@@ -41,7 +41,7 @@
             {
                 <div class="inline">
                     <p class="fw-bold main-blue mt-3">Mine instrumenter </p>
-                    <a asp-action="AddInstrument" asp-route-id="@user.Id"
+                    <a asp-action="AddUserInstrument" asp-route-id="@user.Id"
                         class="btn rounded border-lightgrey shadow-sm m-2 oswald">Tilføj</a>
                 </div>
             }
@@ -68,6 +68,8 @@
                                     @genre.Genre.GenreName
                                 </span>
                             }
+                            <a asp-action="EditUserInstrument" asp-route-id="@instrument.Id" asp-route-instrumentId="@instrument.InstrumentId"
+                            class="btn rounded border-lightgrey shadow-sm m-2 oswald">Rediger</a>
                         </div>
                     </div>
                 </div>
