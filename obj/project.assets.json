@@ -9175,19 +9175,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/miklas/.nuget/packages/": {}
+    "/Users/davidfraenkel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/miklas/dotnet/DAOS/MusicDating.csproj",
+      "projectUniqueName": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/MusicDating.csproj",
       "projectName": "MusicDating",
-      "projectPath": "/Users/miklas/dotnet/DAOS/MusicDating.csproj",
-      "packagesPath": "/Users/miklas/.nuget/packages/",
-      "outputPath": "/Users/miklas/dotnet/DAOS/obj/",
+      "projectPath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/MusicDating.csproj",
+      "packagesPath": "/Users/davidfraenkel/.nuget/packages/",
+      "outputPath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/miklas/.nuget/NuGet/NuGet.Config"
+        "/Users/davidfraenkel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9272,7 +9272,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
       }
     }
   }

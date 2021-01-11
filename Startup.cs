@@ -34,6 +34,7 @@ namespace MusicDating
             services.AddIdentity<MusicDating.Models.Entities.ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
+                .AddRoles<IdentityRole>()
                 .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();

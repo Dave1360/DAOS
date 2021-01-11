@@ -75,9 +75,9 @@ namespace MusicDating.Controllers
             // var user = await _context.ApplicationUsers.FindAsync(id);
 
             var user = await (from u in _context.ApplicationUsers
-            .Include(u => u.Profile) 
-            where u.Id == id
-                    select u).FirstAsync();
+            .Include(u => u.Profile)
+                              where u.Id == id
+                              select u).FirstAsync();
 
             if (user == null)
             {
@@ -89,9 +89,27 @@ namespace MusicDating.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,FirstName,LastName,PhoneNumber,Email")] ApplicationUser applicationUser)
-        {         
-            Console.WriteLine(applicationUser);
+        public async Task<IActionResult> Edit(string id, [Bind("Id,FirstName,LastName,PhoneNumber,Email,Profile")] ApplicationUser applicationUser)
+        {
+            ApplicationUser user = await _userManager.GetUserAsync(User);
+
+            var profile = await (from u in _context.Profiles
+                                 where u.ProfileId == user.Id
+                                 select u).FirstAsync();
+
+            user.Profile = profile;
+
+            user.FirstName = applicationUser.FirstName;
+            user.LastName = applicationUser.LastName;
+            user.PhoneNumber = applicationUser.PhoneNumber;
+            user.Email = applicationUser.Email;
+
+
+            user.Profile.Description = applicationUser.Profile.Description;
+            user.Profile.City = applicationUser.Profile.City;
+            user.Profile.ZipCode = applicationUser.Profile.ZipCode;
+
+
             if (applicationUser.Id != id)
             {
                 Console.WriteLine("Not found");
@@ -102,8 +120,8 @@ namespace MusicDating.Controllers
             {
                 try
                 {
-                    
-                    _context.Update(applicationUser);
+
+                    _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -127,14 +145,15 @@ namespace MusicDating.Controllers
             return _context.ApplicationUsers.Any(e => e.Id == id);
         }
 
-        public async Task<IActionResult> AddUserInstrument(string id, int instrumentId, int genreId) {
+        public async Task<IActionResult> AddUserInstrument(string id, int instrumentId, int genreId)
+        {
 
             var user = await (from u in _context.ApplicationUsers
-            .Include(u => u.Profile) 
-            where u.Id == id
-                    select u).FirstAsync();
+            .Include(u => u.Profile)
+                              where u.Id == id
+                              select u).FirstAsync();
 
-             if (user == null)
+            if (user == null)
             {
                 return NotFound();
             }
@@ -153,36 +172,38 @@ namespace MusicDating.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddUserInstrument(string id, int[] genreId, [Bind("Id,InstrumentId,Level")] UserInstrument userInstrument) {
-             if (ModelState.IsValid)
+        public async Task<IActionResult> AddUserInstrument(string id, int[] genreId, [Bind("Id,InstrumentId,Level")] UserInstrument userInstrument)
+        {
+            if (ModelState.IsValid)
             {
                 try
-                {   
-                    
-                    _context.Add(userInstrument);
-                   foreach (var item in genreId)
-                   {
+                {
 
-                        var userInstrumentGenre = new UserInstrumentGenre {Id = id, InstrumentId = userInstrument.InstrumentId, GenreId = item};
+                    _context.Add(userInstrument);
+                    foreach (var item in genreId)
+                    {
+
+                        var userInstrumentGenre = new UserInstrumentGenre { Id = id, InstrumentId = userInstrument.InstrumentId, GenreId = item };
                         _context.Add(userInstrumentGenre);
-                   } 
+                    }
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException ex)
                 {
-                    throw;
+                    throw (ex);
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Profile", new { id = userInstrument.Id });
             }
             return View();
         }
 
-        public async Task<IActionResult> EditUserInstrument(string id, int instrumentId, int genreId) {
+        public async Task<IActionResult> EditUserInstrument(string id, int instrumentId, int genreId)
+        {
 
-            var user = await (from u in _context.UserInstruments 
-            .Include(u=> u.UserInstrumentGenres).ThenInclude(u => u.Genre)
-            where u.Id == id && u.InstrumentId == instrumentId
-                    select u).FirstAsync();
+            var user = await (from u in _context.UserInstruments
+            .Include(u => u.UserInstrumentGenres).ThenInclude(u => u.Genre)
+                              where u.Id == id && u.InstrumentId == instrumentId
+                              select u).FirstAsync();
 
             var EditUserInstrumentVm = new EditUserInstrumentVm
             {
@@ -196,27 +217,29 @@ namespace MusicDating.Controllers
                 return NotFound();
             }
 
-            return View(EditUserInstrumentVm);  
+            return View(EditUserInstrumentVm);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditUserInstrument(string id, int[] genreId, [Bind("Id,InstrumentId,Level")] UserInstrument userInstrument) {
-            if(ModelState.IsValid)
+        public async Task<IActionResult> EditUserInstrument(string id, int[] genreId, [Bind("Id,InstrumentId,Level")] UserInstrument userInstrument)
+        {
+            if (ModelState.IsValid)
             {
                 try
-                {   
-                    
+                {
+
                     _context.Update(userInstrument);
-                    var userInstrumentsList = from u in _context.UserInstrumentGenres 
-                    where u.Id == id && u.InstrumentId == userInstrument.InstrumentId
-                            select u;
-                        
+                    var userInstrumentsList = from u in _context.UserInstrumentGenres
+                                              where u.Id == id && u.InstrumentId == userInstrument.InstrumentId
+                                              select u;
+
                     foreach (var item in userInstrumentsList)
                     {
                         _context.UserInstrumentGenres.Remove(item);
                     }
-                    foreach (var item in genreId) {
-                        var userInstrumentGenre = new UserInstrumentGenre {Id = id, InstrumentId = userInstrument.InstrumentId, GenreId = item};
+                    foreach (var item in genreId)
+                    {
+                        var userInstrumentGenre = new UserInstrumentGenre { Id = id, InstrumentId = userInstrument.InstrumentId, GenreId = item };
                         _context.Add(userInstrumentGenre);
                     }
                     await _context.SaveChangesAsync();
@@ -225,10 +248,10 @@ namespace MusicDating.Controllers
                 {
                     throw;
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Profile", new { id = userInstrument.Id });
             }
             return View();
-            }
-
         }
+
     }
+}

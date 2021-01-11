@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/miklas/dotnet/DAOS/MusicDating.csproj",
+  "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/MusicDating.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14392,168 +14392,168 @@
   "RootNamespace": "MusicDating",
   "Documents": [
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Home/Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Users/AddUserInstrument.cshtml",
-      "TargetPath": "Views\\Users\\AddUserInstrument.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Shared/Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Svgs/musician-icon.cshtml",
-      "TargetPath": "Views\\Svgs\\musician-icon.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Shared/_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Areas/Identity/Pages/Account/Login.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Areas/Identity/Pages/Account/Register.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Areas/Identity/Pages/Account/Register.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Agents/Delete.cshtml",
-      "TargetPath": "Views\\Agents\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Instruments/Edit.cshtml",
-      "TargetPath": "Views\\Instruments\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Areas/Identity/Pages/Account/Logout.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Instruments/Details.cshtml",
-      "TargetPath": "Views\\Instruments\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Instruments/Index.cshtml",
-      "TargetPath": "Views\\Instruments\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Agents/Edit.cshtml",
-      "TargetPath": "Views\\Agents\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Users/Edit.cshtml",
-      "TargetPath": "Views\\Users\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Areas/Identity/Pages/_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Svgs/ensemble-icon.cshtml",
-      "TargetPath": "Views\\Svgs\\ensemble-icon.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Users/Profile.cshtml",
-      "TargetPath": "Views\\Users\\Profile.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Instruments/Create.cshtml",
-      "TargetPath": "Views\\Instruments\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Agents/Create.cshtml",
-      "TargetPath": "Views\\Agents\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Areas/Identity/Pages/Account/_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Users/Index.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Users/Index.cshtml",
       "TargetPath": "Views\\Users\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Instruments/Delete.cshtml",
-      "TargetPath": "Views\\Instruments\\Delete.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Svgs/notes.cshtml",
-      "TargetPath": "Views\\Svgs\\notes.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Areas/Identity/Pages/Account/Login.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Agents/Edit.cshtml",
+      "TargetPath": "Views\\Agents\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Agents/Index.cshtml",
-      "TargetPath": "Views\\Agents\\Index.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Areas/Identity/Pages/Account/Logout.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Agents/Details.cshtml",
-      "TargetPath": "Views\\Agents\\Details.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Users/Edit.cshtml",
+      "TargetPath": "Views\\Users\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Areas/Identity/Pages/_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Agents/Create.cshtml",
+      "TargetPath": "Views\\Agents\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/Users/EditUserInstrument.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Users/EditUserInstrument.cshtml",
       "TargetPath": "Views\\Users\\EditUserInstrument.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/miklas/dotnet/DAOS/Views/_ViewImports.cshtml",
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Instruments/Index.cshtml",
+      "TargetPath": "Views\\Instruments\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Instruments/Delete.cshtml",
+      "TargetPath": "Views\\Instruments\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Agents/Delete.cshtml",
+      "TargetPath": "Views\\Agents\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Instruments/Edit.cshtml",
+      "TargetPath": "Views\\Instruments\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Shared/Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Agents/Index.cshtml",
+      "TargetPath": "Views\\Agents\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Agents/Details.cshtml",
+      "TargetPath": "Views\\Agents\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Svgs/notes.cshtml",
+      "TargetPath": "Views\\Svgs\\notes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Instruments/Details.cshtml",
+      "TargetPath": "Views\\Instruments\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Users/AddUserInstrument.cshtml",
+      "TargetPath": "Views\\Users\\AddUserInstrument.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Shared/_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Svgs/ensemble-icon.cshtml",
+      "TargetPath": "Views\\Svgs\\ensemble-icon.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Users/Profile.cshtml",
+      "TargetPath": "Views\\Users\\Profile.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Areas/Identity/Pages/_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Areas/Identity/Pages/Account/_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Areas/Identity/Pages/_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Home/Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Instruments/Create.cshtml",
+      "TargetPath": "Views\\Instruments\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/davidfraenkel/Desktop/2.semester/dotnet/MusicDating/Views/Svgs/musician-icon.cshtml",
+      "TargetPath": "Views\\Svgs\\musician-icon.cshtml",
       "FileKind": "mvc"
     }
   ],
