@@ -20,23 +20,27 @@ namespace MusicDating.Models.Services
                          select g.Genre;
 
             var users = from u in _context.ApplicationUsers
-            .Include(u=>u.UserInstruments).ThenInclude(u=>u.UserInstrumentGenres).ThenInclude(u=>u.Genre)
-            .Include(u=>u.UserInstruments).ThenInclude(u=>u.Instrument)
+            .Include(u => u.Profile)
+            .Include(u => u.UserInstruments).ThenInclude(u => u.UserInstrumentGenres).ThenInclude(u => u.Genre)
+            .Include(u => u.UserInstruments).ThenInclude(u => u.Instrument)
+                        where u.Profile.Searching == true
                         select u;
 
-            if(instrumentId != 0){
+            if (instrumentId != 0)
+            {
                 users = from u in users
-                from ui in u.UserInstruments
-                where ui.Instrument.InstrumentId == instrumentId
-                select u;
+                        from ui in u.UserInstruments
+                        where ui.Instrument.InstrumentId == instrumentId
+                        select u;
             }
 
-            if(genreId != 0){
+            if (genreId != 0)
+            {
                 users = from u in users
-                from ui in u.UserInstruments
-                from uig in ui.UserInstrumentGenres
-                where uig.GenreId == genreId
-                select u;
+                        from ui in u.UserInstruments
+                        from uig in ui.UserInstrumentGenres
+                        where uig.GenreId == genreId
+                        select u;
             }
 
 

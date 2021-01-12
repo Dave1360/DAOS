@@ -108,6 +108,7 @@ namespace MusicDating.Controllers
             user.Profile.Description = applicationUser.Profile.Description;
             user.Profile.City = applicationUser.Profile.City;
             user.Profile.ZipCode = applicationUser.Profile.ZipCode;
+            user.Profile.Searching = applicationUser.Profile.Searching;
 
 
             if (applicationUser.Id != id)

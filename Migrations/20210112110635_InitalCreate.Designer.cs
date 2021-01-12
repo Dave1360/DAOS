@@ -9,8 +9,8 @@ using MusicDating.Data;
 namespace MusicDating.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210110175305_myDB1")]
-    partial class myDB1
+    [Migration("20210112110635_InitalCreate")]
+    partial class InitalCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -242,7 +242,7 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5d1c11bf-cb24-4d24-82c9-71f931b5d292",
+                            ConcurrencyStamp = "afabea7a-13c1-4364-9886-db46b3a99ad9",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "kappa@kappa.dk",
                             EmailConfirmed = false,
@@ -250,7 +250,7 @@ namespace MusicDating.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f301557f-f4c8-4ee1-9a2f-037dfae7a769",
+                            SecurityStamp = "5741c540-bb21-40f6-a562-8261130706db",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -258,7 +258,7 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "942f1f8a-5068-4154-b708-8282ed10d6b0",
+                            ConcurrencyStamp = "f6edbe02-a097-4024-9fb2-c9e8bae9ea8a",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "therealdummy@dummy.dk",
                             EmailConfirmed = false,
@@ -266,7 +266,7 @@ namespace MusicDating.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "89b55ca3-f424-42cf-9254-e50822a0d32c",
+                            SecurityStamp = "e027f391-f0bb-40e5-b44b-100ac27f33d1",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });
@@ -405,6 +405,9 @@ namespace MusicDating.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("Searching")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int?>("ZipCode")
                         .HasColumnType("INTEGER");
 
@@ -419,6 +422,7 @@ namespace MusicDating.Migrations
                             Birthday = new DateTime(2020, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Herlev",
                             Description = "I have played 7 years blah blah",
+                            Searching = true,
                             ZipCode = 2730
                         },
                         new
@@ -427,6 +431,7 @@ namespace MusicDating.Migrations
                             Birthday = new DateTime(2020, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Albertslund",
                             Description = "I have played 10 years blah blah",
+                            Searching = true,
                             ZipCode = 2620
                         });
                 });

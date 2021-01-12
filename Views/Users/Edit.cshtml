@@ -47,9 +47,16 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <h4>Profile Status</h4>
+            <p>Søger du i øjeblikket nogle at spille med? Hvis du vælger 'søger ikke' vil din profil ikke dukke op når andre musikere laver en søgning</p>
+            <div class="form-group">
+                <label asp-for="Profile.Searching">Søger</label>
+                <input type="radio" asp-for="Profile.Searching" value="true">
+                <label asp-for="Profile.Searching">Søger ikke</label>
+                <input type="radio" asp-for="Profile.Searching" value="false">
+            </div>
             <input type="hidden" asp-for="Id" />
              <div class="form-group">
-                <input type="submit" value="Save" class="contact-button text-white btn btn-block rounded-x2 mb-3" />
+                <input type="submit" value="Gem profil" class="contact-button text-white btn btn-block rounded-x2 mb-3" />
             </div>
         </form>
     </div>

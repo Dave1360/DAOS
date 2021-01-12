@@ -12,7 +12,7 @@
     @foreach (var user in Model)
     {
         <div class="border-bottom bg-white w-100 mb-3">
-            <p class="main-red oswald">@user.UserName</p>
+            <p class="main-red oswald">@user.FirstName @user.LastName</p>
             <p>Member since: @user.DateCreated.ToString("MMMM yyyy")</p>
             @if (SignInManager.IsSignedIn(User) && @UserManager.GetUserId(User) == @user.Id)
             {
@@ -68,16 +68,26 @@
                                     @genre.Genre.GenreName
                                 </span>
                             }
-                            <a asp-action="EditUserInstrument" asp-route-id="@instrument.Id" asp-route-instrumentId="@instrument.InstrumentId"
-                            class="btn rounded border-lightgrey shadow-sm m-2 oswald">Rediger</a>
+                            @if (SignInManager.IsSignedIn(User) && @UserManager.GetUserId(User) == @user.Id)
+                            {
+                                <a asp-action="EditUserInstrument" asp-route-id="@instrument.Id"
+                                    asp-route-instrumentId="@instrument.InstrumentId"
+                                    class="btn rounded border-lightgrey shadow-sm m-2 oswald">Rediger</a>
+                            }
                         </div>
                     </div>
                 </div>
             }
         </div>
         <div class="border-top bg-white w-100 mb-3 border-bottom">
-            <p class="fw-bold main-blue mt-3">@user.UserName's ensembles </p>
-            @* Connect ensembles to a user *@
+            @if (SignInManager.IsSignedIn(User) && @UserManager.GetUserId(User) == @user.Id)
+            {
+                <p class="fw-bold main-blue mt-3">Mine ensembles </p>
+            }
+            else
+            {
+                <p class="fw-bold main-blue mt-3">@user.FirstName's ensembles </p>
+            }
         </div>
     }
 </section>
