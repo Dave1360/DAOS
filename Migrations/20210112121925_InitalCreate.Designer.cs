@@ -9,7 +9,7 @@ using MusicDating.Data;
 namespace MusicDating.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210112110635_InitalCreate")]
+    [Migration("20210112121925_InitalCreate")]
     partial class InitalCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -242,15 +242,16 @@ namespace MusicDating.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "afabea7a-13c1-4364-9886-db46b3a99ad9",
+                            ConcurrencyStamp = "d38c42e6-5d41-4e02-a479-d23f688d598f",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "kappa@kappa.dk",
                             EmailConfirmed = false,
+                            FirstName = "Kappa",
                             LastName = "Kappa",
                             LockoutEnabled = false,
                             PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5741c540-bb21-40f6-a562-8261130706db",
+                            SecurityStamp = "18592689-5464-460e-b5e9-0c8d82c8cc79",
                             TwoFactorEnabled = false,
                             UserName = "Kappa"
                         },
@@ -258,15 +259,16 @@ namespace MusicDating.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f6edbe02-a097-4024-9fb2-c9e8bae9ea8a",
+                            ConcurrencyStamp = "41186745-8a83-4b12-93c3-884c8d180b70",
                             DateCreated = new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "therealdummy@dummy.dk",
                             EmailConfirmed = false,
+                            FirstName = "Dummy",
                             LastName = "Dummy",
                             LockoutEnabled = false,
                             PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e027f391-f0bb-40e5-b44b-100ac27f33d1",
+                            SecurityStamp = "7ebda772-f835-47b2-bc83-59fd145ec7f7",
                             TwoFactorEnabled = false,
                             UserName = "Dummy"
                         });
@@ -465,6 +467,12 @@ namespace MusicDating.Migrations
                             Id = "2",
                             InstrumentId = 2,
                             Level = 2
+                        },
+                        new
+                        {
+                            Id = "2",
+                            InstrumentId = 3,
+                            Level = 10
                         });
                 });
 
@@ -512,6 +520,13 @@ namespace MusicDating.Migrations
                             GenreId = 2,
                             Id = "2",
                             InstrumentId = 2
+                        },
+                        new
+                        {
+                            UserInstrumentGenreId = 4,
+                            GenreId = 1,
+                            Id = "2",
+                            InstrumentId = 3
                         });
                 });
 

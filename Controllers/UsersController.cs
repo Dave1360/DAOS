@@ -28,11 +28,11 @@ namespace MusicDating.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> Index(int instrumentId, int genreId)
+        public async Task<IActionResult> Index(int instrumentId, int genreId, int level)
         {
             // Do some coding - filter users to only display those who play the instrument
             // Get list of instruments
-            UserInstrumentVm userInstrumentVM = await UserServices.SearchForUsers(_context, instrumentId, genreId);
+            UserInstrumentVm userInstrumentVM = await UserServices.SearchForUsers(_context, instrumentId, genreId, level);
 
             return View(userInstrumentVM);
         }
@@ -51,8 +51,6 @@ namespace MusicDating.Controllers
             .Include(u => u.UserInstruments).ThenInclude(u => u.Instrument)
                        select u;
 
-            // var user = await _context.Users
-            //     .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
                 return NotFound();
@@ -71,8 +69,6 @@ namespace MusicDating.Controllers
         // GET: Profile/Edit/
         public async Task<IActionResult> Edit(string id)
         {
-
-            // var user = await _context.ApplicationUsers.FindAsync(id);
 
             var user = await (from u in _context.ApplicationUsers
             .Include(u => u.Profile)
@@ -113,7 +109,6 @@ namespace MusicDating.Controllers
 
             if (applicationUser.Id != id)
             {
-                Console.WriteLine("Not found");
                 return NotFound();
             }
 
@@ -121,7 +116,6 @@ namespace MusicDating.Controllers
             {
                 try
                 {
-
                     _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
@@ -129,7 +123,6 @@ namespace MusicDating.Controllers
                 {
                     if (!ApplicationUserExists(applicationUser.Id))
                     {
-                        Console.WriteLine("Does not exist");
                         return NotFound();
                     }
                     else
@@ -137,7 +130,7 @@ namespace MusicDating.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Profile", new { id = applicationUser.Id });
             }
             return View();
         }
@@ -150,7 +143,6 @@ namespace MusicDating.Controllers
         {
 
             var user = await (from u in _context.ApplicationUsers
-            .Include(u => u.Profile)
                               where u.Id == id
                               select u).FirstAsync();
 

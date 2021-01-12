@@ -7,28 +7,30 @@
     ViewData["Title"] = "Profile";
 }
 
-
+<div>
+    <a class="btn rounded border-lightgrey shadow-sm m-2 oswald" asp-action="Index">Tilbage</a>
+</div>
 <section class="profile-background">
     @foreach (var user in Model)
     {
         <div class="border-bottom bg-white w-100 mb-3">
             <p class="main-red oswald">@user.FirstName @user.LastName</p>
-            <p>Member since: @user.DateCreated.ToString("MMMM yyyy")</p>
+            <p>Medlem siden: @user.DateCreated.ToString("MMMM yyyy")</p>
             @if (SignInManager.IsSignedIn(User) && @UserManager.GetUserId(User) == @user.Id)
             {
-                <a class="btn rounded border-lightgrey shadow-sm m-2 oswald" asp-action="Edit" asp-route-id="@user.Id">Edit
-                    Profile</a>
+                <a class="btn rounded border-lightgrey shadow-sm m-2 oswald" asp-action="Edit" asp-route-id="@user.Id">Rediger
+                    Profil</a>
             }
             else
             {
-                <a href="#" class="contact-button text-white btn btn-block rounded-x2 mb-3">Contact</a>
+                <a href="#" class="contact-button text-white btn btn-block rounded-x2 mb-3">Kontakt</a>
             }
         </div>
         <div class="border-top bg-white w-100 mb-3 border-bottom">
-            <p class="fw-bold main-blue mt-3">Profile description</p>
+            <p class="fw-bold main-blue mt-3">Profilbeskrivelse</p>
             @if (user.Profile.Description == null)
             {
-                <p>User Has no profile description</p>
+                <p>Brugeren har ikke nogen profilbeskrivelse </p>
             }
             else
             {
@@ -60,7 +62,7 @@
                         <div class="card-text">
                             <h5>@instrument.Instrument.Name</h5>
                             <div>
-                                <h6>Level <span class="badge badge-primary">@instrument.Level</span></h6>
+                                <h6>Niveau <span class="badge badge-primary">@instrument.Level</span></h6>
                             </div>
                             @foreach (var genre in instrument.UserInstrumentGenres)
                             {

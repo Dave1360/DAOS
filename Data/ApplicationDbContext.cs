@@ -56,8 +56,8 @@ namespace MusicDating.Data
                 .HasForeignKey<Profile>(c => c.ProfileId);
 
             modelBuilder.Entity<ApplicationUser>().HasData(
-                new ApplicationUser { Id = "1", UserName = "Kappa", Email = "kappa@kappa.dk", PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", LastName = "Kappa", DateCreated = new System.DateTime(2020, 12, 24) },
-                new ApplicationUser { Id = "2", UserName = "Dummy", Email = "therealdummy@dummy.dk", PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", LastName = "Dummy", DateCreated = new System.DateTime(2020, 12, 24) }
+                new ApplicationUser { Id = "1", UserName = "Kappa", FirstName = "Kappa", Email = "kappa@kappa.dk", PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", LastName = "Kappa", DateCreated = new System.DateTime(2020, 12, 24) },
+                new ApplicationUser { Id = "2", UserName = "Dummy", FirstName = "Dummy", Email = "therealdummy@dummy.dk", PasswordHash = "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", LastName = "Dummy", DateCreated = new System.DateTime(2020, 12, 24) }
             );
 
             modelBuilder.Entity<Profile>().HasData(
@@ -75,7 +75,8 @@ namespace MusicDating.Data
             // Add data - userinstruments
             modelBuilder.Entity<UserInstrument>().HasData(
                 new UserInstrument { Id = "1", InstrumentId = 1, Level = 5 },
-                new UserInstrument { Id = "2", InstrumentId = 2, Level = 2 }
+                new UserInstrument { Id = "2", InstrumentId = 2, Level = 2 },
+                new UserInstrument { Id = "2", InstrumentId = 3, Level = 10 }
             );
 
             modelBuilder.Entity<Ensemble>().HasData(
@@ -99,7 +100,8 @@ namespace MusicDating.Data
             modelBuilder.Entity<UserInstrumentGenre>().HasData(
                new UserInstrumentGenre { UserInstrumentGenreId = 1, InstrumentId = 2, GenreId = 3, Id = "2" },
                new UserInstrumentGenre { UserInstrumentGenreId = 2, InstrumentId = 1, GenreId = 1, Id = "1" },
-               new UserInstrumentGenre { UserInstrumentGenreId = 3, InstrumentId = 2, GenreId = 2, Id = "2" }
+               new UserInstrumentGenre { UserInstrumentGenreId = 3, InstrumentId = 2, GenreId = 2, Id = "2" },
+               new UserInstrumentGenre { UserInstrumentGenreId = 4, InstrumentId = 3, GenreId = 1, Id = "2" }
            );
         }
 

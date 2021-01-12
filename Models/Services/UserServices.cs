@@ -13,7 +13,7 @@ namespace MusicDating.Models.Services
 {
     public class UserServices
     {
-        public async static Task<UserInstrumentVm> SearchForUsers(ApplicationDbContext _context, int instrumentId, int genreId)
+        public async static Task<UserInstrumentVm> SearchForUsers(ApplicationDbContext _context, int instrumentId, int genreId, int level)
         {
 
             var genres = from g in _context.UserInstrumentGenres.Include(g => g.Genre)
@@ -26,18 +26,37 @@ namespace MusicDating.Models.Services
                         where u.Profile.Searching == true
                         select u;
 
-            if (instrumentId != 0)
+            if (level != 0)
             {
                 users = from u in users
                         from ui in u.UserInstruments
-                        where ui.Instrument.InstrumentId == instrumentId
+                        where ui.Level >= level
                         select u;
             }
 
-            if (genreId != 0)
+            if (instrumentId != 0 && level != 0)
             {
                 users = from u in users
                         from ui in u.UserInstruments
+                        where ui.Instrument.InstrumentId == instrumentId && ui.Level >= level
+                        select u;
+            }
+
+            if (genreId != 0 && level != 0)
+            {
+                users = from u in users
+                        from ui in u.UserInstruments
+                        where ui.Level >= level
+                        from uig in ui.UserInstrumentGenres
+                        where uig.GenreId == genreId
+                        select u;
+            }
+
+            if (genreId != 0 && instrumentId != 0)
+            {
+                users = from u in users
+                        from ui in u.UserInstruments
+                        where ui.Instrument.InstrumentId == instrumentId && ui.Level >= level
                         from uig in ui.UserInstrumentGenres
                         where uig.GenreId == genreId
                         select u;
@@ -46,11 +65,12 @@ namespace MusicDating.Models.Services
 
             var userInstrumentVM = new UserInstrumentVm
             {
-                ApplicationUsers = await users.ToListAsync(),
+                ApplicationUsers = await users.Distinct().ToListAsync(),
                 Instruments = new SelectList(await _context.Instruments.ToListAsync(), "InstrumentId", "Name"),
                 Genres = new SelectList(await genres.Distinct().ToListAsync(), "GenreId", "GenreName"),
                 InstrumentId = instrumentId,
-                GenreId = genreId
+                GenreId = genreId,
+                Level = level
             };
 
             return userInstrumentVM;

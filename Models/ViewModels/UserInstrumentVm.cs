@@ -8,6 +8,7 @@ namespace MusicDating.Models.ViewModels
     public class UserInstrumentVm
     {
         public IEnumerable<ApplicationUser> ApplicationUsers { get; set; }
+        public int Level { get; set; }
         public SelectList Instruments { get; set; }
         public int InstrumentId { get; set; }
         public SelectList Genres { get; set; }

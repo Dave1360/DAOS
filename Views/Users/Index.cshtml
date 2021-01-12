@@ -10,14 +10,19 @@
     <div class="form-group">
         <label asp-for="InstrumentId" class="control-label">Instrument</label>
         <select asp-for="InstrumentId" class="form-control" asp-items="Model.Instruments">
-            <option value="">All</option>
+            <option value="">Alle</option>
         </select>
     </div>
     <div class="form-group">
         <label asp-for="GenreId" class="control-label">Genre</label>
         <select asp-for="GenreId" class="form-control" asp-items="Model.Genres">
-            <option value="">All</option>
+            <option value="">Alle</option>
         </select>
+    </div>
+    <div class="form-group">
+            <label asp-for="Level" class="control-label">Niveau</label><span id="rangeInput">: @Model.Level</span>
+            <input type="range" min="1" max="10" step="1" asp-for="Level" class="form-control no-padding" onchange="updateVal(this.value)" />
+            <span asp-validation-for="Level" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input type="submit" value="Filter" class="btn btn-primary" />
@@ -33,7 +38,7 @@
                        <h5 class="card-title">
                             @item.FirstName @item.LastName
                        </h5>
-                       <a asp-action="Profile" asp-route-id="@item.Id" class="btn btn-secondary">Show profile</a>
+                       <a asp-action="Profile" asp-route-id="@item.Id" class="btn btn-secondary">Vis profil</a>
                    </div>
                 <div class="card-text">
                 @foreach (var userInstrument in item.UserInstruments){
@@ -41,7 +46,7 @@
                         @userInstrument.Instrument.Name
                     </h5>
                     <div>
-                        <h6>Level <span class="badge badge-primary">@userInstrument.Level</span></h6>
+                        <h6>Niveau <span class="badge badge-primary">@userInstrument.Level</span></h6>
                     </div>
                     <div>
                         @foreach (var genre in userInstrument.UserInstrumentGenres) {

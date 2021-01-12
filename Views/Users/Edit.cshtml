@@ -3,14 +3,14 @@
     ViewData["Title"] = "Edit Profile";
 }
 <div>
-    <a class="btn rounded border-lightgrey shadow-sm m-2 oswald" asp-action="Index">Back to List</a>
+    <a class="btn rounded border-lightgrey shadow-sm m-2 oswald" asp-action="Index">Tilbage</a>
 </div>
-<h1>Edit Profile</h1>
+<h1>Rediger profil</h1>
 <hr />
 <div class="row">
     <div class="col-12">
         <form asp-action="Edit">
-            <h4>Name</h4>
+            <h4>Navn</h4>
             <div class="row">
                 <div class="form-group col-6">
                     <input asp-for="FirstName" class="form-control" placeholder="Fornavn"/>
@@ -21,7 +21,7 @@
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
             </div>
-            <h4>Profile description</h4>
+            <h4>Profilbeskrivelse</h4>
             <div class="form-group">
                 <textarea asp-for="Profile.Description" placeholder="Skriv eventuelt kort om din musikalske erfaring eller hvad du søger..." cols="30" rows="7" class="form-control" style="resize: none;"></textarea>
             </div>

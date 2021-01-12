@@ -317,12 +317,12 @@ namespace MusicDating.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateCreated", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "afabea7a-13c1-4364-9886-db46b3a99ad9", new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "kappa@kappa.dk", false, null, "Kappa", false, null, null, null, "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", null, false, "5741c540-bb21-40f6-a562-8261130706db", false, "Kappa" });
+                values: new object[] { "1", 0, "d38c42e6-5d41-4e02-a479-d23f688d598f", new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "kappa@kappa.dk", false, "Kappa", "Kappa", false, null, null, null, "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", null, false, "18592689-5464-460e-b5e9-0c8d82c8cc79", false, "Kappa" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateCreated", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2", 0, "f6edbe02-a097-4024-9fb2-c9e8bae9ea8a", new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "therealdummy@dummy.dk", false, null, "Dummy", false, null, null, null, "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", null, false, "e027f391-f0bb-40e5-b44b-100ac27f33d1", false, "Dummy" });
+                values: new object[] { "2", 0, "41186745-8a83-4b12-93c3-884c8d180b70", new DateTime(2020, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "therealdummy@dummy.dk", false, "Dummy", "Dummy", false, null, null, null, "AQAAAAEAACcQAAAAEPhhSjBlklF/wSw5vZgkHkHyUli7jR5JCx2ZMWPJu7haIF5uhQT4x7nEbMnb5eivCw==", null, false, "7ebda772-f835-47b2-bc83-59fd145ec7f7", false, "Dummy" });
 
             migrationBuilder.InsertData(
                 table: "Ensembles",
@@ -390,6 +390,11 @@ namespace MusicDating.Migrations
                 values: new object[] { "2", 2, 2 });
 
             migrationBuilder.InsertData(
+                table: "UserInstruments",
+                columns: new[] { "Id", "InstrumentId", "Level" },
+                values: new object[] { "2", 3, 10 });
+
+            migrationBuilder.InsertData(
                 table: "UserInstrumentGenres",
                 columns: new[] { "UserInstrumentGenreId", "GenreId", "Id", "InstrumentId" },
                 values: new object[] { 2, 1, "1", 1 });
@@ -403,6 +408,11 @@ namespace MusicDating.Migrations
                 table: "UserInstrumentGenres",
                 columns: new[] { "UserInstrumentGenreId", "GenreId", "Id", "InstrumentId" },
                 values: new object[] { 3, 2, "2", 2 });
+
+            migrationBuilder.InsertData(
+                table: "UserInstrumentGenres",
+                columns: new[] { "UserInstrumentGenreId", "GenreId", "Id", "InstrumentId" },
+                values: new object[] { 4, 1, "2", 3 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Agent_InstrumentId",
